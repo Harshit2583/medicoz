@@ -13,10 +13,6 @@ const useSignUp = () => {
   const [submitMessage, setSubmitMessage] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSignOut = () => {
-    dispatch(signOut());
-  };
-
   const handleSignIn = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -64,7 +60,6 @@ const useSignUp = () => {
     password,
     submitMessage,
     isSubmitting,
-    handleSignOut,
     handleSignIn,
   };
 };

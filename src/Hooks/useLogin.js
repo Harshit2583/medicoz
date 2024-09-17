@@ -13,9 +13,9 @@ const useLogin = () => {
 //   const [isRemember, setisRemember] = useState(true);
   const isRemember = useSelector(store => store.auth.isRemember);
 
-  const handleSignIn = () => {
-    dispatch(signIn());
-  };
+  // const handleSignIn = () => {
+  //   dispatch(signIn());
+  // };
 
   const handleRemember = (e) => {
     // setisRemember(e.target.checked);
@@ -62,7 +62,6 @@ const useLogin = () => {
     isSubmitting,
     isRemember,
     handleRemember,
-    handleSignIn,
     handleLogin,
   };
 };

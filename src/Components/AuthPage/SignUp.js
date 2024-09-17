@@ -1,6 +1,7 @@
 import LoadingIcon from "../Common/LoadingIcon";
 import useSignUp from "../../Hooks/useSignUp";
 import Header from "./Header";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const {
@@ -15,7 +16,7 @@ const SignUp = () => {
 
   return (
     <div className="font-poppins">
-      <Header/>
+      {/* <Header/> */}
     <div className="body-bg h-screen flex items-center justify-center pt-20">
       <div className="bg-white p-16 px-10 flex flex-col items-center rounded-lg w-[90%] sm:w-[45%] md:w-[35%] lg:w-[30%] xl:w-[23.5%]">
         <h1 className="text-3xl font-medium mb-10 mt-2">Sign Up</h1>
@@ -75,13 +76,15 @@ const SignUp = () => {
           <p className="mb-1">Forgot Password</p>
           <span className="">
             Already have an account?
+            <Link to={"/login"}>
             <span
-              onClick={handleSignOut}
+              
               className="text-blue-500 cursor-pointer"
             >
               {" "}
               Log In
             </span>{" "}
+            </Link>
           </span>
         </div>
       </div>
