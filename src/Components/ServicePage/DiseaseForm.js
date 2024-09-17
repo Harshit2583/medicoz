@@ -48,9 +48,9 @@ const DiseaseForm = () => {
                 body: JSON.stringify(formattedData),
             });
 
-            if (!response.ok) {
-                throw new Error(HTTP error! status: ${response.status});
-            }
+            // if (!response.ok) {
+            //     throw new Error(HTTP error! status: ${response.status});
+            // }
 
             const data = await response.json();
             setResult(data.diabetes_severity);  // Set the received prediction result
@@ -60,10 +60,10 @@ const DiseaseForm = () => {
     };
 
     return (
-        <div className="container">
-            <h2 className='mb-2'>Patient Information Form</h2>
-            <form onSubmit={"handleSubmit"}>
-                <div className="form-group mb-2">
+        <div className="w-3/4 px-5 py-10">
+            <h2 className=''>Diabetes</h2>
+            <form onSubmit={"handleSubmit"} className='flex flex-col gap-10'>
+                <div className="form-group">
                     <label htmlFor="gender">Enter your Gender</label>
                     <select className="form-control" id="gender" name="gender" onChange={handleChange} value={formData.gender}>
                         <option value="">Select</option>
@@ -73,7 +73,7 @@ const DiseaseForm = () => {
                     </select>
                 </div>
 
-                <div className="form-group mb-2">
+                <div className="form-group">
                     <label htmlFor="age">Enter Your Age</label>
                     <input type="number" className="form-control" id="age" name="age" placeholder="In Years" onChange={handleChange} value={formData.age} />
                 </div>
@@ -109,22 +109,22 @@ const DiseaseForm = () => {
                     </select>
                 </div> */}
 
-                <div className="form-group mb-2">
+                <div className="form-group">
                     <label htmlFor="height">Enter Your Height</label>
                     <input type="number" className="form-control" id="height" name="height" placeholder="In cms" onChange={handleChange} value={formData.height} />
                 </div>
 
-                <div className="form-group mb-2">
+                <div className="form-group">
                     <label htmlFor="weight">Enter Your Weight</label>
                     <input type="number" className="form-control" id="weight" name="weight" placeholder="In kgs" onChange={handleChange} value={formData.weight} />
                 </div>
 
-                <div className="form-group mb-2">
+                <div className="form-group">
                     <label htmlFor="HbA1c">HbA1c Level as per Report</label>
                     <input type="number" className="form-control" id="HbA1c" name="HbA1c" placeholder="In mmol/mol" onChange={handleChange} value={formData.HbA1c} />
                 </div>
 
-                <div className="form-group mb-2">
+                <div className="form-group">
                     <label htmlFor="glucose">Blood Glucose Level as per Report</label>
                     <input type="number" className="form-control" id="glucose" name="glucose" placeholder="As per device or report" onChange={handleChange} value={formData.glucose} />
                 </div>
