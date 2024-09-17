@@ -87,7 +87,7 @@ const DepressionForm = () => {
               id="gender"
               name="negative_mood"
               onChange={handleChange}
-              value={formData.gender}
+              value={formData.negative_mood}
             >
               <option value="2">Mild</option>
               <option value="5">Moderate</option>
@@ -104,7 +104,7 @@ const DepressionForm = () => {
               id="gender"
               name="sleep_quantity"
               onChange={handleChange}
-              value={formData.gender}
+              value={formData.sleep_quantity}
             >
               <option value="2">Adequate</option>
               <option value="5">Insufficient</option>
@@ -121,7 +121,7 @@ const DepressionForm = () => {
               id="gender"
               name="energy_level"
               onChange={handleChange}
-              value={formData.gender}
+              value={formData.energy_level}
             >
               <option value="2">Exhausted</option>
               <option value="5">Low</option>
@@ -138,7 +138,7 @@ const DepressionForm = () => {
               id="gender"
               name="cognitive_decline"
               onChange={handleChange}
-              value={formData.gender}
+              value={formData.cognitive_decline}
             >
               <option value="2">None</option>
               <option value="5">Mild</option>
@@ -155,7 +155,7 @@ const DepressionForm = () => {
               id="gender"
               name="social_engagement"
               onChange={handleChange}
-              value={formData.gender}
+              value={formData.social_engagement}
             >
               <option value="2">Withdrawl</option>
               <option value="5">Low</option>
@@ -172,7 +172,7 @@ const DepressionForm = () => {
               id="gender"
               name="stress_level"
               onChange={handleChange}
-              value={formData.gender}
+              value={formData.stress_level}
             >
               <option value="2">Low</option>
               <option value="5">Moderate</option>
