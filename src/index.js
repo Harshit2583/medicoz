@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import appStore from './Utils/appStore';
 
 const Home = lazy(() => import("./Components/HomePage/Home"));
 const Contact = lazy(() => import("./Components/ContactPage/Contact"));
@@ -107,9 +109,11 @@ const appRouter = createBrowserRouter([
 
 
 root.render(
+  <Provider store={appStore}>
   <React.StrictMode>
       <RouterProvider router={appRouter} />
     </React.StrictMode>
+    </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
