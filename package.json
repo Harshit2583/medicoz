@@ -52,10 +52,6 @@
   },
   "devDependencies": {
     "@reduxjs/toolkit": "^2.2.7",
-<<<<<<< HEAD
-=======
-    "redux": "^5.0.1",
->>>>>>> 41e928fbbe7cc429b73a07b4fadede759f8c9d48
     "tailwindcss": "^3.4.11"
   }
 }
