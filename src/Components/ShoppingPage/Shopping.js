@@ -1,4 +1,4 @@
-import Gradients from "../Common/Gradients"
+import Gradients from "../common/Gradients"
 import MainContainer from "./mainContainer"
 
 const Shopping = () => {
