@@ -6,8 +6,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the fuzzy logic model
-diabetes_simulation = pickle.load(open('OptimizedFuzzyDiabetes.pkl', 'rb'))
-
+diabetes_simulation = pickle.load(open('medicoz_SIH005\server\OptimizedFuzzyDiabetes.pkl', 'rb'))
+depression_simulation = pickle.load(open('medicoz_SIH005\server\Depression\OptimizedFuzzyDepression.pkl', 'rb'))
 @app.route('/service/diabetes/predict', methods=['POST'])
 def DiabetesPredict():
     data = request.json
@@ -34,6 +34,35 @@ def DiabetesPredict():
 
    
     return jsonify({'diabetes_severity': diabetes_severity})
+
+@app.route('/service/depression/predict', methods=['POST'])
+def DepressionPredict():
+    # Log the received data for debugging purposes
+    print("Received data:", request.json)
+    
+    # Parse incoming data from the request
+    data = request.json
+    negative_mood = float(data['negative_mood'])
+    sleep_quantity = float(data['sleep_quantity'])
+    energy_levels = float(data['energy_level'])
+    cognitive_decline = float(data['cognitive_decline'])
+    social_engagement = float(data['social_engagement'])
+    stress_levels = float(data['stress_level'])
+    
+    # Set input values to the fuzzy depression model
+    depression_simulation.input['negative_mood'] = negative_mood
+    depression_simulation.input['sleep_quantity'] = sleep_quantity
+    depression_simulation.input['energy_levels'] = energy_levels
+    depression_simulation.input['cognitive_decline'] = cognitive_decline
+    depression_simulation.input['social_engagement'] = social_engagement
+    depression_simulation.input['stress_levels'] = stress_levels
+    
+    # Compute the fuzzy logic output
+    depression_simulation.compute()
+    
+    # Extract and return the result
+    depression_severity = depression_simulation.output['depression_level']
+    return jsonify({'depression_severity': depression_severity})
 
 if __name__ == '__main__':
     app.run(debug=True)
