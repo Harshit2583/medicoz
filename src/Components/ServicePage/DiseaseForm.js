@@ -4,9 +4,9 @@ const DiseaseForm = () => {
     const [formData, setFormData] = useState({
         gender: '',
         age: '',
-        hypertension: '',
-        heart: '',
-        smoke: '',
+        
+        
+        
         height: '',
         weight: '',
         HbA1c: '',
@@ -30,9 +30,9 @@ const DiseaseForm = () => {
             const formattedData = {
                 gender: parseInt(formData.gender) || 0,
                 age: parseFloat(formData.age) || 0.0,
-                hypertension: parseInt(formData.hypertension) || 0,
-                heart: parseInt(formData.heart) || 0,
-                smoke: parseInt(formData.smoke) || 0,
+                
+                
+                
                 height: parseFloat(formData.height) || 0.0,
                 weight: parseFloat(formData.weight) || 0.0,
                 HbA1c: parseFloat(formData.HbA1c) || 0.0,
@@ -40,7 +40,7 @@ const DiseaseForm = () => {
             };
 
             // Send a POST request to the Flask server
-            const response = await fetch('http://127.0.0.1:5000/', {
+            const response = await fetch('http://127.0.0.1:5000/service/diabetes/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,9 +48,7 @@ const DiseaseForm = () => {
                 body: JSON.stringify(formattedData),
             });
 
-            if (!response.ok) {
-                throw new Error(HTTP error! status: ${response.status});
-            }
+            
 
             const data = await response.json();
             setResult(data.diabetes_severity);  // Set the received prediction result
@@ -62,7 +60,7 @@ const DiseaseForm = () => {
     return (
         <div className="container">
             <h2 className='mb-2'>Patient Information Form</h2>
-            <form onSubmit={"handleSubmit"}>
+            <form onSubmit={handleSubmit}>
                 <div className="form-group mb-2">
                     <label htmlFor="gender">Enter your Gender</label>
                     <select className="form-control" id="gender" name="gender" onChange={handleChange} value={formData.gender}>
