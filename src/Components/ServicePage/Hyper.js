@@ -198,10 +198,10 @@ const Hyper = () => {
             onClick={handleSubmit}
             type="submit"
           >
-            <span className="circle" aria-hidden="true">
+            <span className="circle bg-[#546edf]" aria-hidden="true">
               <span className="icon arrow"></span>
             </span>
-            <span className="button-text">Submit</span>
+            <span className="button-text tracking-wider   font-semibold text-black ">Submit</span>
           </button>
         </form>
       </div>
