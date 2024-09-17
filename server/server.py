@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the fuzzy logic model
-diabetes_simulation = pickle.load(open('medicoz_SIH005\server\OptimizedFuzzyDiabetes.pkl', 'rb'))
+diabetes_simulation = pickle.load(open('./OptimizedFuzzyDiabetes.pkl', 'rb'))
 
 @app.route('/service/diabetes/predict', methods=['POST'])
 def DiabetesPredict():
