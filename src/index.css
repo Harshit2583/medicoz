@@ -427,7 +427,7 @@
 
 .Btn-Container {
   display: flex;
-  /* width: 100%; */
+  width: 100%;
   height: fit-content;
   background-color: #1d2129;
   border-radius: 40px;

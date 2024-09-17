@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { logout } from "../../Utils/authSlice";
 
 const HeaderDropDown = () => {
+  const isLoggedIn = useSelector((store) => store.auth.isLoggedIn);
   const dispatch = useDispatch();
   const handleLanguageDropDown = () => {
     dispatch(showLanguageDropDown());
@@ -22,7 +23,7 @@ const HeaderDropDown = () => {
   const handleLogin = () => {
     dispatch(logout());
     dispatch(showHeaderDropDown());
-  }
+  };
 
   return (
     <div
@@ -30,63 +31,75 @@ const HeaderDropDown = () => {
       onMouseLeave={handleshowDropDown}
     >
       <ul className="lg:space-y-2 font-medium cursor-pointer ">
-        <Link to={"/"}>
-          <li
-            className={`hover:bg-gray-700 px-2 py-1 rounded block lg:hidden ${
-              langKey && langKey === "हिन्दी"
-                ? "font-semibold tracking-wide"
-                : ""
-            }`}
-          >
-            {lang[langKey].home}
-          </li>{" "}
-        </Link>
-        <Link to={"/about"}>
-          <li className="hover:bg-gray-700 px-2 py-1 rounded  block lg:hidden">
-            {lang[langKey].aboutus}
-          </li>{" "}
-        </Link>
-        <Link to={"/services"}>
-          <li className="hover:bg-gray-700 px-2 py-1 rounded  block lg:hidden">
-            {lang[langKey].services}
-          </li>{" "}
-        </Link>
-        <Link to={"/doctor"}>
-          <li className="hover:bg-gray-700 px-2 py-1 rounded  block lg:hidden">
-            {lang[langKey].doctor}
-          </li>{" "}
-        </Link>
-        <Link to={"/shopping"}>
-          <li className="hover:bg-gray-700 px-2 py-1 rounded  block lg:hidden">
-            {/* {lang[langKey].doctor} */}
-            Shopping
-          </li>
-        </Link>
+        {isLoggedIn && (
+          <Link to={"/"}>
+            <li
+              className={`hover:bg-gray-700 px-2 py-1 rounded block lg:hidden ${
+                langKey && langKey === "हिन्दी"
+                  ? "font-semibold tracking-wide"
+                  : ""
+              }`}
+            >
+              {lang[langKey].home}
+            </li>{" "}
+          </Link>
+        )}
 
-        <Link to={"/profile"}>
-          <li className="hover:bg-gray-700 px-2 py-1 rounded">
-            {lang[langKey].profile}
-          </li>
-        </Link>
+        {isLoggedIn && (
+          <Link to={"/services"}>
+            <li className="hover:bg-gray-700 px-2 py-1 rounded  block lg:hidden">
+              {lang[langKey].services}
+            </li>{" "}
+          </Link>
+        )}
+        {isLoggedIn && (
+          <Link to={"/doctor"}>
+            <li className="hover:bg-gray-700 px-2 py-1 rounded  block lg:hidden">
+              {lang[langKey].doctor}
+            </li>{" "}
+          </Link>
+        )}
+        {isLoggedIn && (
+          <Link to={"/shopping"}>
+            <li className="hover:bg-gray-700 px-2 py-1 rounded  block lg:hidden">
+              {/* {lang[langKey].doctor} */}
+              Shopping
+            </li>
+          </Link>
+        )}
 
-        
+        {isLoggedIn && (
+          <Link to={"/profile"}>
+            <li className="hover:bg-gray-700 px-2 py-1 rounded">
+              {lang[langKey].profile}
+            </li>
+          </Link>
+        )}
+
         <li
           className="hover:bg-gray-700 px-2 py-1 rounded"
           onClick={handleLanguageDropDown}
         >
           {lang[langKey].languages} <span className="text-[0.75rem]">⮞</span>
         </li>
-        <li className="hover:bg-gray-700 px-2 py-1 rounded" onClick={handleLogin}>
-          {/* {lang[langKey].login} */}
-          Log Out
-        </li>
-        <li className="mr-2 ml-1 mt-2 rounded-md  block lg:hidden">
-          <Link to={"/contact"}>
-            <button className="p-2 contact-button font-semibold">
-              {lang[langKey].connectwithus}
-            </button>
-          </Link>
-        </li>
+        {isLoggedIn && (
+          <li
+            className="hover:bg-gray-700 px-2 py-1 rounded"
+            onClick={handleLogin}
+          >
+            {/* {lang[langKey].login} */}
+            Log Out
+          </li>
+        )}
+        {isLoggedIn && (
+          <li className="mr-2 ml-1 mt-2 rounded-md  block lg:hidden">
+            <Link to={"/contact"}>
+              <button className="p-2 contact-button font-semibold">
+                {lang[langKey].connectwithus}
+              </button>
+            </Link>
+          </li>
+        )}
       </ul>
     </div>
   );
