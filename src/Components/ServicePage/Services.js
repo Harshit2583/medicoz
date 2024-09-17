@@ -3,7 +3,7 @@ import DiseaseList from "./DiseaseList";
 import DepressionForm from "./DepressionForm";
 import DiabetesForm from "./DiabetesForm";
 import { diseases } from "../../Utils/constant";
-
+import Hyper from "./Hyper";
 const Services = () => {
   
   const [disease_no, setDisease_No] = useState(0);
@@ -29,6 +29,7 @@ const Services = () => {
       </div>
       {disease_no === 0 && <DepressionForm />}
       {disease_no === 1 && <DiabetesForm />}
+      {disease_no === 2 && <Hyper />}
     </div>
   );
 };
