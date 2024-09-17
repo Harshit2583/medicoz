@@ -1,5 +1,6 @@
 import ServicesCard from "../Common/ServicesCard";
 import lang from "../../Utils/languageConstants"
+import { useSelector } from "react-redux";
 const ThirdContainer = () => {
   const langKey = useSelector((store) => store.config.lang);
   return (
@@ -10,7 +11,8 @@ const ThirdContainer = () => {
           {/* We Offer Different Services{" "} */}
         </h1>
         <h1 className="text-center text-4xl font-medium text-[#2C2D3F] mb-4">
-          To Improve Your Health
+        {lang[langKey].toimprove}
+          {/* To Improve Your Health */}
         </h1>
         <hr className="mx-auto bg-[#2235a2] h-[0.2rem] border-0 w-[23%] mb-10" />
         <div className="flex justify-center flex-wrap gap-20 mx-5 lg:mx-20 mb-12 ">

@@ -7,9 +7,9 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
       },
       borderWidth: {
-        "30": "30px",
-      },
-    },
-  },
+        30: "30px",
+      },
+    },
+  },
   plugins: [],
 };
