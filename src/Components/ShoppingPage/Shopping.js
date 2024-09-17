@@ -1,5 +1,5 @@
 import Gradients from "../Common/Gradients"
-import MainContainer from "./MainContainer"
+import MainContainer from "./mainContainer"
 
 const Shopping = () => {
   return (
