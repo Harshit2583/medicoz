@@ -1,5 +1,5 @@
 import glucometer from "../../Images/Glucometer.png";
-import ShoppingCard from "../common/shoppingCard.js";
+import ShoppingCard from "../common/shoppingCart";
 
 const MainContainer = () => {
   return (
