@@ -1,19 +1,29 @@
 import LoadingIcon from "../Common/LoadingIcon";
 import useSignUp from "../../Hooks/useSignUp";
 import Header from "./Header";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 const SignUp = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const {
     email,
     name,
     password,
     submitMessage,
     isSubmitting,
-    handleSignOut,
     handleSignIn
   } = useSignUp();
+  const isLogged = useSelector((store) => store.auth.isLoggedIn);
 
+  useEffect(() => {
+    setIsLoggedIn(isLogged);
+  }, [isLogged]);
+
+  if (isLoggedIn) {
+    return <Navigate to="/" />;
+  }
   return (
     <div className="font-poppins">
       {/* <Header/> */}

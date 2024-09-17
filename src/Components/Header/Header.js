@@ -11,6 +11,7 @@ import HeaderDropDown from "./HeaderDropDown";
 import LanguageDropDown from "./LanguageDropDown";
 
 const Header = () => {
+  const isLoggedIn = useSelector((store) => store.auth.isLoggedIn);
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
   const dispatch = useDispatch();
@@ -39,7 +40,7 @@ const Header = () => {
 
         <div className="mt-6  hidden lg:block">
           <ul className="flex    font-medium tracking-wide">
-            <Link to={"/"}>
+            {isLoggedIn &&<Link to={"/"}>
               <li
                 className={`mx-3 py-2 transition-custom ${
                   isActive("/") ? "underline underline-offset-8" : ""
@@ -51,8 +52,8 @@ const Header = () => {
               >
                 {lang[langKey].home}
               </li>{" "}
-            </Link>
-            <Link to={"/services"}>
+            </Link>}
+            {isLoggedIn &&<Link to={"/services"}>
               <li
                 className={`mx-3 py-2 transition-custom ${
                   isActive("/services") ? "underline underline-offset-8" : ""
@@ -60,8 +61,8 @@ const Header = () => {
               >
                 {lang[langKey].services}
               </li>{" "}
-            </Link>
-            <Link to={"/doctor"}>
+            </Link>}
+            {isLoggedIn &&<Link to={"/doctor"}>
               <li
                 className={`mx-3 py-2 transition-custom ${
                   isActive("/doctor") ? "underline underline-offset-8" : ""
@@ -69,8 +70,8 @@ const Header = () => {
               >
                 {lang[langKey].doctor}
               </li>{" "}
-            </Link>
-            <Link to={"/shopping"}>
+            </Link>}
+            {isLoggedIn&&<Link to={"/shopping"}>
               <li
                 className={`mx-3 py-2 transition-custom ${
                   isActive("/shopping") ? "underline underline-offset-8" : ""
@@ -79,14 +80,14 @@ const Header = () => {
                 {/* {lang[langKey].doctor} */}
                 Shopping
               </li>{" "}
-            </Link>
-            <li className="mr-2 ml-3 rounded-md">
+            </Link>}
+            {isLoggedIn&&<li className="mr-2 ml-3 rounded-md">
               <Link to={"/contact"}>
                 <button className="p-2 contact-button font-semibold">
                   {lang[langKey].connectwithus}
                 </button>
               </Link>
-            </li>
+            </li>}
             <li
               className="mr-16 cursor-pointer"
               onMouseEnter={handleshowDropDown}

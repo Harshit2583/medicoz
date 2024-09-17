@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { login, rememberMe, signIn } from "../Utils/authSlice";
+import { login, rememberMe } from "../Utils/authSlice";
 import axios from "axios";
 import { checkLogInFormData } from "../Utils/validate";
 
