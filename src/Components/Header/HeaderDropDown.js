@@ -72,7 +72,7 @@ const HeaderDropDown = () => {
         
         <li
           className="hover:bg-gray-700 px-2 py-1 rounded"
-          onClick={"handleLanguageDropDown"}
+          onClick={handleLanguageDropDown}
         >
           {lang[langKey].languages} <span className="text-[0.75rem]">⮞</span>
         </li>
