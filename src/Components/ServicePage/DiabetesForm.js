@@ -62,12 +62,12 @@ const DiabetesForm = () => {
       <h2 className="text-center text-4xl mb-10">Diabetes Prediction</h2>
       <div className="w-[90%]">
         <form onSubmit={handleSubmit} className="space-y-5">
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="gender" className="text-lg font-medium mr-5">
               Enter your Gender
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="gender"
               name="gender"
               onChange={handleChange}

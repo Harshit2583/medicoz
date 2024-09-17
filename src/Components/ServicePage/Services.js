@@ -12,7 +12,7 @@ const Services = () => {
     setDisease_No(index);
   };
   return (
-    <div className=" body-bg pt-32 px-20 flex justify-between">
+    <div className=" body-bg pt-32 px-20 flex justify-between pb-20">
       {/* <DiseaseList /> */}
       <div className=" w-1/4 bg-white px-5 py-10 rounded-md">
         <ul>

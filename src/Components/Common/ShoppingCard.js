@@ -1,18 +1,18 @@
 import { useState } from "react";
-// import useRazorPay from "../../Hooks/useRazorPay";
+import useRazorPay from "../../Hooks/useRazorPay";
 
 const ShoppingCard = ({ name, about, image, price }) => {
   const [transactionStatus, setTransactionStatus] = useState(false);
 
-  // const handlePayment = useRazorPay(price, () => {
-  //   setTransactionStatus(false);
-  // });
+  const handlePayment = useRazorPay(price, () => {
+    setTransactionStatus(false);
+  });
 
-  // const initiatePayment = () => {
-  //   setTransactionStatus(true);
+  const initiatePayment = () => {
+    setTransactionStatus(true);
 
-  //   handlePayment();
-  // };
+    handlePayment();
+  };
 
   return (
     <div className="blue-gradient mx-10 md:mx-28 px-2 sm:px-20 py-10 rounded-lg shadow-lg">
@@ -23,7 +23,7 @@ const ShoppingCard = ({ name, about, image, price }) => {
           <p className="font-medium text-sm tracking-wide">{about}</p>
           <button
             className="bg-blue-500 mt-4 lg:mt-0 text-white font-semibold py-2 px-6 rounded-lg hover:text-black flex justify-center"
-            onClick={"initiatePayment"}
+            onClick={initiatePayment}
           >
             Buy Now - {"Rs. " + price / 100}
             {transactionStatus && (
