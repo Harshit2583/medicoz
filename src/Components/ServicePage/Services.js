@@ -36,7 +36,7 @@ const Services = () => {
       {disease_no === 0 && <DepressionForm />}
       {disease_no === 1 && <DiabetesForm />}
       {disease_no === 2 && <Hyper />}
-      {disease_no === 3 && <Adhd />}
+      {/* {disease_no === 3 && <Adhd />} */}
     </div>
   );
 };

@@ -40,7 +40,7 @@ const Header = () => {
 
         <div className="mt-6  hidden lg:block">
           <ul className="flex    font-medium tracking-wide">
-            {isLoggedIn &&<Link to={"/"}>
+            <Link to={"/"}>
               <li
                 className={`mx-3 py-2 transition-custom ${
                   isActive("/") ? "underline underline-offset-8" : ""
@@ -52,8 +52,8 @@ const Header = () => {
               >
                 {lang[langKey].home}
               </li>{" "}
-            </Link>}
-            {isLoggedIn &&<Link to={"/services"}>
+            </Link>
+            <Link to={"/services"}>
               <li
                 className={`mx-3 py-2 transition-custom ${
                   isActive("/services") ? "underline underline-offset-8" : ""
@@ -61,8 +61,8 @@ const Header = () => {
               >
                 {lang[langKey].services}
               </li>{" "}
-            </Link>}
-            {isLoggedIn &&<Link to={"/doctor"}>
+            </Link>
+            <Link to={"/doctor"}>
               <li
                 className={`mx-3 py-2 transition-custom ${
                   isActive("/doctor") ? "underline underline-offset-8" : ""
@@ -70,8 +70,8 @@ const Header = () => {
               >
                 {lang[langKey].doctor}
               </li>{" "}
-            </Link>}
-            {isLoggedIn&&<Link to={"/shopping"}>
+            </Link>
+            <Link to={"/shopping"}>
               <li
                 className={`mx-3 py-2 transition-custom ${
                   isActive("/shopping") ? "underline underline-offset-8" : ""
@@ -80,14 +80,13 @@ const Header = () => {
                 {/* {lang[langKey].doctor} */}
                 Shopping
               </li>{" "}
-            </Link>}
-            {isLoggedIn&&<li className="mr-2 ml-3 rounded-md">
+            </Link><li className="mr-2 ml-3 rounded-md">
               <Link to={"/contact"}>
                 <button className="p-2 contact-button font-semibold">
                   {lang[langKey].connectwithus}
                 </button>
               </Link>
-            </li>}
+            </li>
             <li
               className="mr-16 cursor-pointer"
               onMouseEnter={handleshowDropDown}
