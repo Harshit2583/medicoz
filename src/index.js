@@ -110,9 +110,9 @@ const appRouter = createBrowserRouter([
 
 root.render(
   <Provider store={appStore}>
-  <React.StrictMode>
+  {/* <React.StrictMode> */}
       <RouterProvider router={appRouter} />
-    </React.StrictMode>
+    {/* </React.StrictMode> */}
     </Provider>
 );
 

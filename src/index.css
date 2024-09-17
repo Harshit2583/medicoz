@@ -24,7 +24,7 @@
       #071876 30%,
       #0b1864 100%
     ); */
-    background: linear-gradient(to right, #007bff, rgb(175, 200, 255));
+    background: linear-gradient(to right, #007bff, rgb(145, 184, 237));
 
     /* background: linear-gradient(to bottom, #121212 0%, #1e1e1e 100%); */
   }
@@ -427,7 +427,7 @@
 
 .Btn-Container {
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   height: fit-content;
   background-color: #1d2129;
   border-radius: 40px;
@@ -497,3 +497,128 @@
   left: 70%;
   transform: translate(-50%, -50%);
 }
+
+
+/* From Uiverse.io by eslam-hany */ 
+.book {
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 280px;
+  height: 380px;
+  background-color: whitesmoke;
+  /* -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000; */
+  -webkit-transform: preserve-3d;
+  -ms-transform: preserve-3d;
+  transform: preserve-3d;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  /* display: -webkit-box;
+  display: -ms-flexbox; */
+  /* display: flex; */
+  /* -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; */
+  color: #000;
+}
+
+.cover {
+  top: 0;
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  /* -webkit-box-shadow: 1px 1px 12px #000; */
+  /* box-shadow: 1px 1px 12px #000; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  /* display: flex; */
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.book:hover .cover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotatey(-80deg);
+  -ms-transform: rotatey(-80deg);
+  transform: rotatey(-80deg);
+}
+
+
+/* From Uiverse.io by adamgiebl */ 
+.map-button {
+  font-family: inherit;
+  font-size: 20px;
+  background: royalblue;
+  color: white;
+  padding: 0.4em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.map-button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.map-button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.map-button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.map-button:hover svg {
+  transform: translateX(3em) rotate(45deg) scale(1.1);
+}
+
+.map-button:hover span {
+  transform: translateX(8em);
+}
+
+.map-button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+.map-button.disabled {
+  background-color: #ccc; /* Example disabled background color */
+  cursor: not-allowed; /* Example cursor style for disabled state */
+  opacity: 0.6; /* Example opacity for disabled state */
+}
+
