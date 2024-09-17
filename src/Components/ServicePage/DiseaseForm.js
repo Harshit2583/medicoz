@@ -4,9 +4,9 @@ const DiseaseForm = () => {
     const [formData, setFormData] = useState({
         gender: '',
         age: '',
-        hypertension: '',
-        heart: '',
-        smoke: '',
+        
+        
+        
         height: '',
         weight: '',
         HbA1c: '',
@@ -30,9 +30,9 @@ const DiseaseForm = () => {
             const formattedData = {
                 gender: parseInt(formData.gender) || 0,
                 age: parseFloat(formData.age) || 0.0,
-                hypertension: parseInt(formData.hypertension) || 0,
-                heart: parseInt(formData.heart) || 0,
-                smoke: parseInt(formData.smoke) || 0,
+                
+                
+                
                 height: parseFloat(formData.height) || 0.0,
                 weight: parseFloat(formData.weight) || 0.0,
                 HbA1c: parseFloat(formData.HbA1c) || 0.0,
@@ -40,7 +40,7 @@ const DiseaseForm = () => {
             };
 
             // Send a POST request to the Flask server
-            const response = await fetch('http://127.0.0.1:5000/', {
+            const response = await fetch('http://127.0.0.1:5000/service/diabetes/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
