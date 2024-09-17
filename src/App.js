@@ -5,8 +5,8 @@ import Footer from './Components/Footer/Footer'
 
 const App = () => {
   return (
-    <div>
-        {/* <Header /> */}
+    <div className='font-poppins'>
+        <Header />
         <Outlet />
         {/* <Footer /> */}
     </div>
