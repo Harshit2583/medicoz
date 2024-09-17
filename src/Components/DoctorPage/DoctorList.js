@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from "react";
 import pic from "../../Images/NewsCards1.jpg";
-import { Link } from "react-router-dom";
 import Hospital from "./Hospital";
+import LoadingIcon from "../Common/LoadingIcon";
 const DoctorList = ({ description1, description2 }) => {
-  const [hospital, setHospital] = useState([]);
   const [doctor, setDoctor] = useState([]);
+  const [loading, setLoading] = useState([false])
 
-  //   useEffect(() => {
-  //     const fetchHospital = async () => {
-  //       await showHospital();
-  //     };
-
-  //     fetchHospital();
-  //   }, [description1]);
   useEffect(() => {
+    setLoading(true)
     const fetchDoctor = async () => {
       await showDoctor();
     };
@@ -29,30 +23,22 @@ const DoctorList = ({ description1, description2 }) => {
       );
       const json = await data.json();
       setDoctor(json?.results || []);
+      setLoading(false)
     } catch (error) {
       console.error("Error fetching doctor data:", error);
     }
   };
-
-  //   const showHospital = async () => {
-  //     try {
-  //       const data = await fetch(
-  //         "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=31.2245%2C75.7718&radius=1500&" +
-  //           description1 +
-  //           "&key=AIzaSyCZ4SEGIjhfwioLKuVtQvNS5WP4T_aY4O4"
-  //       );
-  //       const json = await data.json();
-  //       setHospital(json?.results || []);
-  //     } catch (error) {
-  //       console.error("Error fetching hospital data:", error);
-  //     }
-  //   };
-  console.log(doctor);
-
+if(loading){
+    return (
+        <div className="flex justify-center w-[80%] ">
+            <LoadingIcon />
+        </div>
+    )
+}
   return (
-    <div className="w-[80%] overflow-y-scroll no-scrollbar">
+    <div className="w-[80%] overflow-y-scroll no-scrollbar ">
       <h1 className="font-sans text-4xl mb-4 font-medium">Doctors Near You</h1>
-      <div className=" flex flex-wrap gap-y-5 gap-x-10">
+      <div className=" flex flex-wrap gap-y-5 gap-x-16">
         {doctor.map((doc) => {
           const truncatedName =
             doc.name.length > 20 ? doc.name.substring(0, 20) + "..." : doc.name;
@@ -118,7 +104,7 @@ const DoctorList = ({ description1, description2 }) => {
       </div>
       <Hospital description1={description1} />
     </div>
-  );
+);
 };
 
 export default DoctorList;

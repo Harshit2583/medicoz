@@ -622,3 +622,61 @@
   opacity: 0.6; /* Example opacity for disabled state */
 }
 
+
+/* From Uiverse.io by vinodjangid07 */ 
+.gotologin-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: 0px 0px 0px 4px rgba(180, 160, 255, 0.253); */
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.gotologin-button .svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.gotologin-button .svgIcon path {
+  fill: white;
+}
+
+.gotologin-button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(112, 79, 231);
+  align-items: center;
+}
+
+.gotologin-button:hover .svgIcon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.gotologin-button::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Go to Login";
+  color: white;
+  /* transition-duration: .3s; */
+  font-size: 0px;
+}
+
+.gotologin-button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}

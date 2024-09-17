@@ -8,7 +8,7 @@ const App = () => {
     <div className='font-poppins'>
         <Header />
         <Outlet />
-        {/* <Footer /> */}
+        <Footer />
     </div>
   )
 }

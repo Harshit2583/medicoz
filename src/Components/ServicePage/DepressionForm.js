@@ -59,12 +59,12 @@ const DepressionForm = () => {
       <h2 className="text-center text-4xl mb-10">Depression Prediction</h2>
       <div className="w-[90%]">
         <form onSubmit={handleSubmit} className="space-y-5">
-          <div className=" gap-1 flex">
-            <label htmlFor="gender" className="text-lg font-medium mr-5">
+          <div className="gap-1 flex flex-col">
+            <label htmlFor="gender" className="text-lg font-medium">
               Enter your Gender
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="gender"
               name="gender"
               onChange={handleChange}
@@ -76,12 +76,12 @@ const DepressionForm = () => {
             </select>
           </div>
 
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="negative_mood" className="text-lg font-medium mr-5">
               Negative Mood
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="negative_mood"
               name="negative_mood"
               onChange={handleChange}
@@ -94,12 +94,12 @@ const DepressionForm = () => {
             </select>
           </div>
 
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="sleep_quantity" className="text-lg font-medium mr-5">
               Sleep Quantity
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="sleep_quantity"
               name="sleep_quantity"
               onChange={handleChange}
@@ -112,12 +112,12 @@ const DepressionForm = () => {
             </select>
           </div>
 
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="energy_level" className="text-lg font-medium mr-5">
               Energy Level
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="energy_level"
               name="energy_level"
               onChange={handleChange}
@@ -130,12 +130,12 @@ const DepressionForm = () => {
             </select>
           </div>
 
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="cognitive_decline" className="text-lg font-medium mr-5">
               Cognitive Decline
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="cognitive_decline"
               name="cognitive_decline"
               onChange={handleChange}
@@ -148,12 +148,12 @@ const DepressionForm = () => {
             </select>
           </div>
 
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="social_engagement" className="text-lg font-medium mr-5">
               Social Engagement
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="social_engagement"
               name="social_engagement"
               onChange={handleChange}
@@ -166,12 +166,12 @@ const DepressionForm = () => {
             </select>
           </div>
 
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="stress_level" className="text-lg font-medium mr-5">
               Stress Level
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="stress_level"
               name="stress_level"
               onChange={handleChange}
@@ -192,7 +192,7 @@ const DepressionForm = () => {
             <span className="circle bg-[#546edf]" aria-hidden="true">
               <span className="icon arrow"></span>
             </span>
-            <span className="button-text">Submit</span>
+            <span className="button-text tracking-wider   font-semibold text-black">Submit</span>
           </button>
         </form>
       </div>
