@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import MainContainer from "./MainContainer";
 import DoctorList from "./DoctorList";
 import { disease } from "../../Utils/constant";
 const Doctor = () => {
-  const [description1, setdescription1] = useState("type=hospital");
-  const [description2, setdescription2] = useState("type=doctor");
+  const [description1, setdescription1] = useState("type=doctor");
+  const [description2, setdescription2] = useState("type=hospital");
   const handleClick = async (description1, description2) => {
     setdescription1(description1);
     setdescription2(description2);
@@ -12,10 +11,12 @@ const Doctor = () => {
   return (
     <div className="h-screen body-bg pt-32 px-20 flex gap-10">
       <div className="w-1/4">
-        <p className="bg-white text-center py-2 rounded-md font-medium cursor-pointer">
+        {/* <p className="bg-white text-center py-2 rounded-md font-medium cursor-pointer">
           Select the doctor related to disease
-        </p>
-        <div className="bg-white rounded-md rounded-t-none -mt-1 py-5 px-2 ">
+        </p> */}
+        <div className="bg-white rounded-md  -mt-1 pb-5 px-2 h-full">
+          <p className="pt-5 pb-1  text-center font-medium">Select the doctor related to disease</p>
+          <hr className="mb-5 border-b-[1px] border-gray-400"></hr>
           <ul className="flex flex-col items-center">
             {disease.map((disease, index) => (
               <li
