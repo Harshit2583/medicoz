@@ -3,13 +3,8 @@ import DiseaseList from "./DiseaseList";
 import DepressionForm from "./DepressionForm";
 import DiabetesForm from "./DiabetesForm";
 import { diseases } from "../../Utils/constant";
-import Hyper from "./Hyper";
-<<<<<<< HEAD
+import Hyper from './Hyper'
 import Adhd from "./Adhd";
-=======
-import { useSelector } from "react-redux";
-import LoginSimmer from "../ShimmerPage/LoginSimmer";
->>>>>>> 728980c6ac8366c150f6cee16f509eb3c2e62936
 const Services = () => {
   
   const [disease_no, setDisease_No] = useState(0);
