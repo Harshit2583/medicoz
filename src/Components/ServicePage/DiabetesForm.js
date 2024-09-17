@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const DiseaseForm = () => {
+const DiabetesForm = () => {
   const [formData, setFormData] = useState({
     gender: "",
     age: "",
@@ -59,7 +59,7 @@ const DiseaseForm = () => {
 
   return (
     <div className="w-[72%] px-5 py-10 flex flex-col items-center bg-white rounded-md">
-      <h2 className="text-center text-4xl mb-10">Diabetes</h2>
+      <h2 className="text-center text-4xl mb-10">Diabetes Prediction</h2>
       <div className="w-[90%]">
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className=" gap-1 flex">
@@ -73,7 +73,7 @@ const DiseaseForm = () => {
               onChange={handleChange}
               value={formData.gender}
             >
-              <option value="1">Male</option>
+              <option value="1" className="appearance-none">Male</option>
               <option value="0">Female</option>
               <option value="2">Other</option>
             </select>
@@ -83,13 +83,14 @@ const DiseaseForm = () => {
             <p htmlFor="age" className="text-lg font-medium">Enter Your Age</p>
             <input
               type="number"
-              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black" 
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="age"
               name="age"
               placeholder="In Years"
               onChange={handleChange}
               value={formData.age}
             />
+            
           </div>
 
           {/* <div className="form-group mb-2">
@@ -201,4 +202,4 @@ const DiseaseForm = () => {
   );
 };
 
-export default DiseaseForm;
+export default DiabetesForm;

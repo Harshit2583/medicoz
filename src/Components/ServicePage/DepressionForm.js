@@ -59,7 +59,7 @@ const DepressionForm = () => {
 
   return (
     <div className="w-[72%] px-5 py-10 flex flex-col items-center bg-white rounded-md">
-      <h2 className="text-center text-4xl mb-10">Diabetes</h2>
+      <h2 className="text-center text-4xl mb-10">Depression Prediction</h2>
       <div className="w-[90%]">
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className=" gap-1 flex">

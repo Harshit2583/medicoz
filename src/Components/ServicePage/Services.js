@@ -1,16 +1,36 @@
-import React from 'react'
-import DiseaseList from './DiseaseList'
-import DiseaseForm from './DiseaseForm'
-import DepressionForm from './DepressionForm'
+import React, { useState } from "react";
+import DiseaseList from "./DiseaseList";
+import DepressionForm from "./DepressionForm";
+import DiabetesForm from "./DiabetesForm";
+import { diseases } from "../../Utils/constant";
 
 const Services = () => {
+  
+  const [disease_no, setDisease_No] = useState(0);
+
+  const handleClick = (index) => {
+    setDisease_No(index);
+  };
   return (
     <div className=" body-bg pt-32 px-20 flex justify-between">
-      <DiseaseList />
-      {/* <DiseaseForm /> */}
-      <DepressionForm />
+      {/* <DiseaseList /> */}
+      <div className=" w-1/4 bg-white px-5 py-10 rounded-md">
+        <ul>
+          {diseases.map((disease, index) => (
+            <li
+              key={index}
+              className="mb-4 border border-black text-center px-5 py-2 rounded-md cursor-pointer"
+              onClick={() => handleClick(index)}
+            >
+              {disease}
+            </li>
+          ))}
+        </ul>
+      </div>
+      {disease_no === 0 && <DepressionForm />}
+      {disease_no === 1 && <DiabetesForm />}
     </div>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;
