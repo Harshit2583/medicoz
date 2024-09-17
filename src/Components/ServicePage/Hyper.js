@@ -63,12 +63,12 @@ const Hyper = () => {
       <h2 className="text-center text-4xl mb-10">Hypertension Prediction</h2>
       <div className="w-[90%]">
         <form onSubmit={handleSubmit} className="space-y-5">
-          <div className="gap-1 flex">
+          <div className="gap-1 flex flex-col">
             <label htmlFor="gender" className="text-lg font-medium mr-5">
               Gender
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="gender"
               name="gender"
               onChange={handleChange}
@@ -79,12 +79,12 @@ const Hyper = () => {
             </select>
           </div>
 
-          <div className="gap-1 flex">
-            <label htmlFor="age" className="text-lg font-medium mr-5">
+          <div className="gap-1 flex flex-col">
+            <p htmlFor="age" className="text-lg font-medium mr-5">
               Age
-            </label>
+            </p>
             <input
-              className="border border-black px-2 rounded-md font-medium"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               type="number"
               id="age"
               name="age"
@@ -93,12 +93,12 @@ const Hyper = () => {
             />
           </div>
 
-          <div className="gap-1 flex">
+          <div className="gap-1 flex flex-col">
             <label htmlFor="currentSmoker" className="text-lg font-medium mr-5">
               Current Smoker (1 for Yes, 0 for No)
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="currentSmoker"
               name="currentSmoker"
               onChange={handleChange}
@@ -109,12 +109,12 @@ const Hyper = () => {
             </select>
           </div>
 
-          <div className="gap-1 flex">
+          <div className="gap-1 flex flex-col">
             <label htmlFor="BPMeds" className="text-lg font-medium mr-5">
               Blood Pressure Medication (BPMeds)
             </label>
             <input
-              className="border border-black px-2 rounded-md font-medium"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               type="number"
               id="BPMeds"
               name="BPMeds"
@@ -123,12 +123,12 @@ const Hyper = () => {
             />
           </div>
 
-          <div className="gap-1 flex">
+          <div className="gap-1 flex flex-col">
             <label htmlFor="totChol" className="text-lg font-medium mr-5">
               Total Cholesterol (totChol)
             </label>
             <input
-              className="border border-black px-2 rounded-md font-medium"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               type="number"
               id="totChol"
               name="totChol"
@@ -137,12 +137,12 @@ const Hyper = () => {
             />
           </div>
 
-          <div className="gap-1 flex">
+          <div className="gap-1 flex flex-col">
             <label htmlFor="sysBP" className="text-lg font-medium mr-5">
               Systolic Blood Pressure (sysBP)
             </label>
             <input
-              className="border border-black px-2 rounded-md font-medium"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               type="number"
               id="sysBP"
               name="sysBP"
@@ -151,12 +151,12 @@ const Hyper = () => {
             />
           </div>
 
-          <div className="gap-1 flex">
+          <div className="gap-1 flex flex-col">
             <label htmlFor="diaBP" className="text-lg font-medium mr-5">
               Diastolic Blood Pressure (diaBP)
             </label>
             <input
-              className="border border-black px-2 rounded-md font-medium"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               type="number"
               id="diaBP"
               name="diaBP"
@@ -165,12 +165,12 @@ const Hyper = () => {
             />
           </div>
 
-          <div className="gap-1 flex">
+          <div className="gap-1 flex flex-col">
             <label htmlFor="BMI" className="text-lg font-medium mr-5">
               Body Mass Index (BMI)
             </label>
             <input
-              className="border border-black px-2 rounded-md font-medium"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               type="number"
               id="BMI"
               name="BMI"
@@ -179,12 +179,12 @@ const Hyper = () => {
             />
           </div>
 
-          <div className="gap-1 flex">
+          <div className="gap-1 flex flex-col">
             <label htmlFor="heart_rate" className="text-lg font-medium mr-5">
               Heart Rate
             </label>
             <input
-              className="border border-black px-2 rounded-md font-medium"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               type="number"
               id="heart_rate"
               name="heart_rate"
