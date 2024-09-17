@@ -2,6 +2,7 @@ import React from "react";
 
 const DiseaseList = () => {
   const diseases = [
+    "Depression",
     "Hypertension",
     "Dementia",
     "Aids",
@@ -15,7 +16,7 @@ const DiseaseList = () => {
   ];
 
   return (
-    <div className="border border-black w-1/4 bg-white px-5 py-10" >
+    <div className=" w-1/4 bg-white px-5 py-10 rounded-md" >
       <ul>
         {diseases.map((disease, index) => (
           <li key={index} className="mb-4 border border-black text-center px-5 py-2 rounded-md">
