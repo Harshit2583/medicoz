@@ -1,4 +1,10 @@
 import glucometer from "../../Images/Glucometer.png";
+import BpMeasure from "../../Images/BloodPressureMoniter.jpg";
+import ThermoMeasure from "../../Images/clinical-digital-thermometer.jpg";
+import CovidTests from "../../Images/covidTest.jpg";
+import FirstAid from "../../Images/firstAidKit.jpg";
+import PulseOximeter from "../../Images/pulseOximeter.jpg";
+import PregnancyKit from "../../Images/PregnancyTestingKit.jpg";
 
 import ShoppingCard from "../Common/ShoppingCard";
 
@@ -24,7 +30,7 @@ const MainContainer = () => {
           about={
             "Keep a close watch on your heart health with our reliable blood pressure monitor. Offering accurate and fast results, this user-friendly device tracks your systolic and diastolic pressures, as well as heart rate, from the comfort of your home. Its digital display and memory function make it easy to monitor trends over time, helping you stay informed and in control."
           }
-          image={glucometer}
+          image={BpMeasure}
           price={207500}
         />
       </div>
@@ -35,7 +41,7 @@ const MainContainer = () => {
           about={
             "Ensure the well-being of your family with our easy-to-use thermometer, designed for fast and precise temperature readings. Whether you’re checking for fever or tracking body temperature changes, this essential tool provides accurate results in seconds. With digital displays and memory recall, staying on top of your health has never been simpler."
           }
-          image={glucometer}
+          image={ThermoMeasure}
           price={85000}
         />
       </div>
@@ -46,7 +52,7 @@ const MainContainer = () => {
           about={
             "Safeguard yourself and those around you with our reliable COVID test kit, providing quick and accurate results from the comfort of your home. With easy instructions and fast testing capabilities, you can detect the presence of the virus in minutes, allowing for timely decisions about health and safety. A must-have for anyone prioritizing public health and well-being."
           }
-          image={glucometer}
+          image={CovidTests}
           price={125000}
         />
       </div>
@@ -57,7 +63,7 @@ const MainContainer = () => {
           about={
             "Be prepared for minor injuries and emergencies with our comprehensive first aid kit. Stocked with essential medical supplies like bandages, antiseptic wipes, and more, this kit provides everything you need for on-the-spot treatment. Compact and portable, it’s perfect for home, travel, or outdoor activities, ensuring you’re always ready to handle unexpected situations."
           }
-          image={glucometer}
+          image={FirstAid}
           price={124500}
         />
       </div>
@@ -68,7 +74,7 @@ const MainContainer = () => {
           about={
             "Keep an eye on your oxygen levels and heart rate with our compact and easy-to-use pulse oximeter. This non-invasive device delivers quick and accurate readings with just a fingertip placement, allowing you to monitor your health at any time. Ideal for respiratory conditions and fitness tracking, it’s a vital tool for maintaining wellness."
           }
-          image={glucometer}
+          image={PulseOximeter}
           price={166000}
         />
       </div>
@@ -79,7 +85,7 @@ const MainContainer = () => {
           about={
             "Get clear and reliable results with our easy-to-use pregnancy test kit, designed to deliver accurate answers quickly. With simple instructions and high sensitivity, it provides peace of mind by confirming pregnancy within minutes. Discreet and dependable, it’s the ideal companion for women seeking accurate reproductive health information."
           }
-          image={glucometer}
+          image={PregnancyKit}
           price={41500}
         />
       </div>
