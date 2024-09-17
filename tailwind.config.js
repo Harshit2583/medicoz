@@ -10,15 +10,9 @@ module.exports = {
       },
       borderWidth: {
         "30": "30px",
-<<<<<<< HEAD
       },
     },
   },
-=======
-      },
-    },
-  },
->>>>>>> d98fe89b7c61cafc063bb9ce7173a719444d6601
   plugins: [],
 }
 
