@@ -3,12 +3,7 @@ import DepressionForm from "./DepressionForm";
 import DiabetesForm from "./DiabetesForm";
 import { diseases } from "../../Utils/constant";
 import Hyper from "./Hyper";
-<<<<<<< HEAD
-import Adhd from "./Adhd";
-=======
 import { useSelector } from "react-redux";
-import LoginSimmer from "../ShimmerPage/LoginSimmer";
->>>>>>> 728980c6ac8366c150f6cee16f509eb3c2e62936
 import LoginShimmer from "../ShimmerPage/LoginShimmer";
 const Services = () => {
   
@@ -19,7 +14,7 @@ const Services = () => {
   };
 
   const isLoggedIn = useSelector((store) => store.auth.isLoggedIn);
-if(isLoggedIn===false) return(<LoginShimmer />)
+// if(isLoggedIn===false) return(<LoginShimmer />)
 
   return (
     <div className=" body-bg pt-32 px-20 flex justify-between pb-20">
@@ -39,7 +34,7 @@ if(isLoggedIn===false) return(<LoginShimmer />)
       {disease_no === 0 && <DepressionForm />}
       {disease_no === 1 && <DiabetesForm />}
       {disease_no === 2 && <Hyper />}
-      {disease_no === 3 && <Adhd />}
+      {/* {disease_no === 3 && <Adhd />} */}
     </div>
   );
 };
