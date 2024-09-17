@@ -1,19 +1,33 @@
-import React, { Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Home from './Components/HomePage/Home';
-import Contact from './Components/ContactPage/Contact';
-import Transaction from './Components/TransactionPage/Transaction';
-import Doctor from './Components/DoctorPage/Doctor';
-import Shopping from './Components/ShoppingPage/Shopping';
-import Profile from './Components/ProfilePage/Profile';
-import Shimmer from './Components/ShimmerPage/Shimmer';
-import Error from './Components/ErrorPage/Error';
-import Services from './Components/ServicePage/Services';
-import App from './App';
+// import Home from './Components/HomePage/Home';
+// import Contact from './Components/ContactPage/Contact';
+// import Transaction from './Components/TransactionPage/Transaction';
+// import Doctor from './Components/DoctorPage/Doctor';
+// import Shopping from './Components/ShoppingPage/Shopping';
+// import Profile from './Components/ProfilePage/Profile';
+// import Shimmer from './Components/ShimmerPage/Shimmer';
+// import Error from './Components/ErrorPage/Error';
+// import Services from './Components/ServicePage/Services';
+// import App from './App';
+// import LogIn from './Components/AuthPage/Login';
+// import SignUp from './Components/AuthPage/SignUp';
 
+const Home = lazy(() => import("./Components/HomePage/Home"));
+const Contact = lazy(() => import("./Components/ContactPage/Contact"));
+const Transaction = lazy(() => import("./Components/TransactionPage/Transaction"));
+const Doctor = lazy(() => import("./Components/DoctorPage/Doctor"));
+const Shopping = lazy(() => import("./Components/ShoppingPage/Shopping"));
+const Profile = lazy(() => import("./Components/ProfilePage/Profile"));
+const Shimmer = lazy(() => import("./Components/ShimmerPage/Shimmer"));
+const Error = lazy(() => import("./Components/ErrorPage/Error"));
+const Services = lazy(() => import("./Components/ServicePage/Services"));
+const App = lazy(() => import("./App"));
+const LogIn = lazy(() => import("./Components/AuthPage/LogIn"));
+const SignUp = lazy(() => import("./Components/AuthPage/SignUp"));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -75,6 +89,22 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<Shimmer />}>
             <Transaction />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/login",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <LogIn />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/signup",
+        element: (
+          <Suspense fallback={<Shimmer />}>
+            <SignUp />
           </Suspense>
         ),
       },
