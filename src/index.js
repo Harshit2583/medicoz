@@ -3,18 +3,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-// import Home from './Components/HomePage/Home';
-// import Contact from './Components/ContactPage/Contact';
-// import Transaction from './Components/TransactionPage/Transaction';
-// import Doctor from './Components/DoctorPage/Doctor';
-// import Shopping from './Components/ShoppingPage/Shopping';
-// import Profile from './Components/ProfilePage/Profile';
-// import Shimmer from './Components/ShimmerPage/Shimmer';
-// import Error from './Components/ErrorPage/Error';
-// import Services from './Components/ServicePage/Services';
-// import App from './App';
-// import LogIn from './Components/AuthPage/Login';
-// import SignUp from './Components/AuthPage/SignUp';
 
 const Home = lazy(() => import("./Components/HomePage/Home"));
 const Contact = lazy(() => import("./Components/ContactPage/Contact"));
@@ -47,9 +35,9 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: (
-          // <Suspense fallback={<Shimmer />}>
+          <Suspense fallback={<Shimmer />}>
             <Contact />
-          // </Suspense>
+          </Suspense>
         ),
       },
       {
