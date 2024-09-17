@@ -24,7 +24,7 @@
       #071876 30%,
       #0b1864 100%
     ); */
-    background: linear-gradient(to right, #007bff, rgb(175, 200, 255));
+    background: linear-gradient(to right, #007bff, rgb(145, 184, 237));
 
     /* background: linear-gradient(to bottom, #121212 0%, #1e1e1e 100%); */
   }
@@ -72,6 +72,7 @@
     transition: all 0.3s ease-in;
     padding-right: 20px;
     padding-left: 20px;
+    
   }
 
   .submit-button {
@@ -141,6 +142,7 @@
     margin: 0 0 0 1.85rem;
     line-height: 1.6;
     text-align: center;
+    
   }
 
   .submit-button:hover .circle {
