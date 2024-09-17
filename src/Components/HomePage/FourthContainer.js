@@ -1,9 +1,9 @@
-// import NewsCard from "../Common/NewsCard";
+import NewsCard from "../Common/NewsCard";
 
 const FourthContainer = () => {
   return (
     <div>
-      {/* <h1 className="text-center text-4xl font-medium text-[#2C2D3F] mb-1">
+      <h1 className="text-center text-4xl font-medium text-[#2C2D3F] mb-1">
         Keep Up With Our Most Recent
       </h1>
       <h1 className="text-center text-4xl font-medium text-[#2C2D3F] mb-4">
@@ -14,7 +14,7 @@ const FourthContainer = () => {
         <NewsCard />
         <NewsCard />
         <NewsCard />
-      </div> */}
+      </div>
     </div>
   );
 };

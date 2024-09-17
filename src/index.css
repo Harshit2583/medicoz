@@ -504,7 +504,7 @@
   position: relative;
   border-radius: 10px;
   width: 280px;
-  height: 350px;
+  height: 380px;
   background-color: whitesmoke;
   /* -webkit-box-shadow: 1px 1px 12px #000;
   box-shadow: 1px 1px 12px #000; */
@@ -557,9 +557,4 @@
   -webkit-transform: rotatey(-80deg);
   -ms-transform: rotatey(-80deg);
   transform: rotatey(-80deg);
-}
-
-.book p {
-  font-size: 20px;
-  font-weight: bolder;
 }
