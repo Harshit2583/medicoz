@@ -6,8 +6,10 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the fuzzy logic model
-diabetes_simulation = pickle.load(open('server\OptimizedFuzzyDiabetes.pkl', 'rb'))
-depression_simulation = pickle.load(open('server\Depression\OptimizedFuzzyDepression.pkl', 'rb'))
+adhd = pickle.load(open('medicoz_SIH005\server\Adhd\Adhd.pkl', 'rb'))
+diabetes_simulation = pickle.load(open('medicoz_SIH005\server\OptimizedFuzzyDiabetes.pkl', 'rb'))
+hyper = pickle.load(open('medicoz_SIH005\server\hypertension\hypertension.pkl', 'rb'))
+depression_simulation = pickle.load(open('medicoz_SIH005\server\Depression\OptimizedFuzzyDepression.pkl', 'rb'))
 @app.route('/service/diabetes/predict', methods=['POST'])
 def DiabetesPredict():
     data = request.json
@@ -63,6 +65,82 @@ def DepressionPredict():
     # Extract and return the result
     depression_severity = depression_simulation.output['depression_level']
     return jsonify({'depression_severity': depression_severity})
+@app.route('/service/hypertension/predict', methods=['POST'])
+def HyperPredict():
+    # Log the received data for debugging purposes
+    print("Received data:", request.json)
+    
+    # Parse incoming data from the request
+    data = request.json
+    gender_val=int(data['gender'])
+    age_val = int(data['age'])
+    CSmoker_Val = int(data['currentSmoker'])
+    BPMeds_val = float(data['BPMeds'])
+    totChol_val = float(data['totChol'])
+    sysBP_val = float(data['sysBP'])
+    diaBP_val = float(data['diaBP'])
+    BMI_val = float(data['BMI'])
+    heartRate_val = float(data['heart_rate'])
+    
+    
+    
+    data=[gender_val,age_val,CSmoker_Val,BPMeds_val,totChol_val,sysBP_val,diaBP_val,BMI_val,heartRate_val]
+    
+    output=hyper.predict([data])
+    
+    if output[0]==1:
+        result="You need a Doctor's Consultancy"
+    else:
+        result="You are Safe to continue your life"
+    return jsonify({'Prediction Result': result})
 
+@app.route('/service/adhd/predict', methods=['POST'])
+def AdhdPredict():
+    # Log the received data for debugging purposes
+    result=("Received data:", request.json)
+    
+    # Parse incoming data from the request
+    data = request.json
+    AS_val = data.get('Attention_Span')
+    MR_val = data.get('Memory_Recall')
+    H_val = data.get('Hyperactivity')
+    TM_val = data.get('Time_Management')
+    FHOA_val = data.get('Family_History_of_ADHD')
+    I_val = data.get('Impulsivity')
+    
+
+    
+    # Check if the values are valid floats
+    
+    AS_val = float(AS_val)
+    MR_val = float(MR_val)
+    H_val = float(H_val)
+    TM_val = float(TM_val)
+    FHOA_val = float(FHOA_val)
+    I_val = float(I_val)
+    
+    
+    # Set the fuzzy logic inputs
+    
+    adhd.input['Attention_Span'] = AS_val
+    adhd.input['Memory_Recall'] = MR_val
+    adhd.input['Hyperactivity'] = H_val
+    adhd.input['Time_Management'] = TM_val
+    adhd.input['Family_History_of_ADHD'] = FHOA_val
+    adhd.input['Impulsivity'] = I_val
+        # Compute the fuzzy logic output
+    adhd.compute()
+        
+        # Extract and return the result
+    adhd_severity = adhd.output['adhd_severity']
+    if 0 <= adhd_severity < 33:
+        result=("adhd_severity: Very Low. No significant depressive symptoms detected.")
+    elif 33 <= adhd_severity < 49:
+        result=("adhd_severity: Low. Mild depressive symptoms might be present. Consider seeking support or monitoring your well-being.")
+    elif 49 <= adhd_severity < 67:
+        result=("adhd_severity: Medium. Moderate depressive symptoms are likely. Seeking professional help is recommended.")
+    elif 67 <= adhd_severity < 100:
+        result=("adhd_severity: High. Significant depressive symptoms are present. Professional evaluation and treatment are strongly advised.")
+    return jsonify({'adhd_severity': result})
 if __name__ == '__main__':
     app.run(debug=True)
