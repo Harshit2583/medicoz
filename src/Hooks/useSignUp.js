@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { signOut } from "../Utils/authSlice";
 import { checkSignUpFormData } from "../Utils/validate";
+import { Navigate } from "react-router-dom";
 
 const useSignUp = () => {
   const email = useRef(null);
@@ -43,7 +44,7 @@ const useSignUp = () => {
           "Sign Up Successful. Redirecting You to Login Page..."
         );
         setTimeout(() => {
-          dispatch(signOut());
+          <Navigate to={"/login"}></Navigate>
         }, 3000);
       }
       setIsSubmitting(false);

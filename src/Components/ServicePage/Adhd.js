@@ -63,7 +63,7 @@ const Adhd = () => {
   };
 
   return (
-    <div className="w-[72%] px-5 py-10 flex flex-col items-center bg-white rounded-md">
+    <div className="md:w-[72%]  w-full px-5 py-10 flex flex-col items-center bg-white rounded-md">
       <h2 className="text-center text-4xl mb-10">ADHD Prediction</h2>
       <div className="w-[90%]">
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -78,6 +78,7 @@ const Adhd = () => {
               onChange={handleChange}
               value={formData.Attention_Span}
             >
+              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>
@@ -96,6 +97,7 @@ const Adhd = () => {
               onChange={handleChange}
               value={formData.Memory_Recall}
             >
+              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>
@@ -114,6 +116,7 @@ const Adhd = () => {
               onChange={handleChange}
               value={formData.Hyperactivity}
             >
+              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>
@@ -132,6 +135,7 @@ const Adhd = () => {
               onChange={handleChange}
               value={formData.Time_Management}
             >
+              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>
@@ -150,6 +154,7 @@ const Adhd = () => {
               onChange={handleChange}
               value={formData.Family_History_of_ADHD}
             >
+              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>
@@ -168,6 +173,7 @@ const Adhd = () => {
               onChange={handleChange}
               value={formData.Impulsivity}
             >
+              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>

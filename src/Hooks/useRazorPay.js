@@ -44,7 +44,7 @@ const useRazorPay = (amount, onSuccess) => {
         if (onSuccess) {
           onSuccess(); // Invoke the callback to set transaction status to false
         }
-        window.location.href = "/transaction";
+        // window.location.href = "/transaction";
       },
       notes: {
         address: "Address",

@@ -13,8 +13,8 @@ const Doctor = () => {
   };
   if (isLoggedIn === false) return <LoginShimmer />;
   return (
-    <div className="h-screen body-bg pt-32 px-20 flex gap-10">
-      <div className="w-1/4">
+    <div className="md:h-screen body-bg pt-32 px-20 flex flex-col md:flex-row gap-10">
+      <div className="w-full md:w-1/4">
         <div className="bg-white rounded-md  -mt-1 pb-5 px-2 h-full">
           <p className="pt-5 pb-1  text-center font-medium">
             Select the doctor related to disease
@@ -26,7 +26,7 @@ const Doctor = () => {
                 key={index}
                 className={`w-[85%] text-center font-medium p-2 text-lg border border-black ${
                   index === disease.length - 1 ? "border-b-0" : ""
-                } cursor-pointer hover:bg-gray-400 rounded-md mb-4`}
+                } cursor-pointer hover:bg-gray-200 rounded-md mb-4`}
                 onClick={() =>
                   handleClick(disease.description1, disease.description2)
                 }

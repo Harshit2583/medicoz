@@ -1,6 +1,6 @@
 import ContactContent from "./ContactContent";
 import ContactForm from "./ContactForm";
-// import Gradients from "../Common/Gradients";
+import Gradients from "../Common/Gradients";
 
 const Contact = () => {
   return (
@@ -8,7 +8,7 @@ const Contact = () => {
       <div className=" absolute w-60 h-60 sm:w-80 sm:h-80 -top-[6.563rem] left-10 lg:left-64 border-30 rounded-full opacity-20 z-40"></div>
       <ContactContent />
       <ContactForm />
-      {/* <Gradients /> */}
+      <Gradients />
     </div>
   );
 };

@@ -91,6 +91,16 @@ const HeaderDropDown = () => {
             Log Out
           </li>
         )}
+        {!isLoggedIn && (
+          <Link to={"/login"}>
+          <li
+            className="hover:bg-gray-700 px-2 py-1 rounded"
+            onClick={handleLogin}
+          >
+            {/* {lang[langKey].login} */}
+            Log In
+          </li></Link>
+        )}
         {isLoggedIn && (
           <li className="mr-2 ml-1 mt-2 rounded-md  block lg:hidden">
             <Link to={"/contact"}>

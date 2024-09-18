@@ -36,9 +36,9 @@ if(loading){
     )
 }
   return (
-    <div className="w-[80%] overflow-y-scroll no-scrollbar ">
-      <h1 className="font-sans text-4xl mb-4 font-medium">Doctors Near You</h1>
-      <div className=" flex flex-wrap gap-y-5 gap-x-16">
+    <div className="w-full md:w-[80%] md:overflow-y-scroll no-scrollbar ">
+      <h1 className="text-center md:text-left font-sans text-4xl mb-4 font-medium">Doctors Near You</h1>
+      <div className="justify-center md:justify-normal flex flex-wrap  gap-y-5 gap-x-16">
         {doctor.map((doc) => {
           const truncatedName =
             doc.name.length > 20 ? doc.name.substring(0, 20) + "..." : doc.name;

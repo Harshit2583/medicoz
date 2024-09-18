@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './Components/Header/Header'
-import { Outlet } from 'react-router-dom'
+import { Outlet, ScrollRestoration } from 'react-router-dom'
 import Footer from './Components/Footer/Footer'
 
 const App = () => {
@@ -8,6 +8,7 @@ const App = () => {
     <div className='font-poppins'>
         <Header />
         <Outlet />
+        <ScrollRestoration />
         <Footer />
     </div>
   )

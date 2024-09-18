@@ -5,9 +5,7 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import Logo from "../Common/Logo";
 import Header from "./Header";
-import { Link } from "react-router-dom";
 import lang from "../../Utils/languageConstants";
-import { useSelector } from "react-redux";
 
 const LogIn = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -22,6 +20,7 @@ const LogIn = () => {
   } = useLogin();
 
   const isLogged = useSelector((store) => store.auth.isLoggedIn);
+  const langKey = useSelector((store) => store.config.lang);
 
   useEffect(() => {
     setIsLoggedIn(isLogged);
@@ -31,7 +30,6 @@ const LogIn = () => {
     return <Navigate to="/" />;
   }
 
-  const langKey = useSelector((store) => store.config.lang);
 
   return (
     <div className="font-poppins">
@@ -74,7 +72,7 @@ const LogIn = () => {
           </div>
           <button className="Btn-Container mb-10" onClick={handleLogin}>
             <span className="text">
-              Login {isSubmitting && <LoadingIcon content="" />}
+              {/* Login {isSubmitting && <LoadingIcon content="" />} */}
             {lang[langKey].login}{isSubmitting && <LoadingIcon content={""} />}
             </span>
             <span className="icon-Container">
@@ -100,15 +98,10 @@ const LogIn = () => {
           </button>
 
           <div className="text-center text-xs font-medium mb-4">
-            <p className="mb-1">Forgot Password</p>
-            <div>
-              Don't have an account?
-              <Link to="/signup">
-                <span className="text-blue-500 cursor-pointer"> Sign Up </span>
-              </Link></div>
             <p className="mb-1">{lang[langKey].forgotpassword}</p>
             <span className="">
-            {lang[langKey].haveAccount}
+            {/* {lang[langKey].haveAccount}? */}
+            Doesn't have an account?
               <Link to={"/signup"}>
               <span
                 

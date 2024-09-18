@@ -33,9 +33,18 @@ def DiabetesPredict():
 
   
     diabetes_severity = diabetes_simulation.output['diabetes']
+    if 0 <= diabetes_severity < 33:
+        result=("Diabetes Severity: Very Low. No significant diabetic symptoms detected.")
+    elif 33 <= diabetes_severity < 49:
+        result=("Diabetes Severity: Low. Mild Diabetic symptoms might be present. Consider seeking support or monitoring your well-being.")
+    elif 49 <= diabetes_severity < 67:
+        result=("Diabetes Severity: Medium. Moderate Diabetic symptoms are likely. Seeking professional help is recommended.")
+    elif 67 <= diabetes_severity < 100:
+        result=("Diabetes Severity: High. Significant diabetic symptoms are present. Professional evaluation and treatment are strongly advised.")
+    return jsonify({'diabetes_severity': result})
 
    
-    return jsonify({'diabetes_severity': diabetes_severity})
+    
 
 @app.route('/service/depression/predict', methods=['POST'])
 def DepressionPredict():
@@ -58,8 +67,16 @@ def DepressionPredict():
     
     depression_simulation.compute()
     
-    depression_severity = depression_simulation.output['depression_level']
-    return jsonify({'depression_severity': depression_severity})
+    output_level = depression_simulation.output['depression_level']
+    if 0 <= output_level < 33:
+        result=("Depression Level: Very Low. No significant depressive symptoms detected.")
+    elif 33 <= output_level < 49:
+        result=("Depression Level: Low. Mild depressive symptoms might be present. Consider seeking support or monitoring your well-being.")
+    elif 49 <= output_level < 67:
+        result=("Depression Level: Medium. Moderate depressive symptoms are likely. Seeking professional help is recommended.")
+    elif 67 <= output_level < 100:
+        result=("Depression Level: High. Significant depressive symptoms are present. Professional evaluation and treatment are strongly advised.")
+    return jsonify({'depression_severity': result})
 @app.route('/service/hypertension/predict', methods=['POST'])
 def HyperPredict():
     # Log the received data for debugging purposes
@@ -129,13 +146,13 @@ def AdhdPredict():
         # Extract and return the result
     adhd_severity = adhd.output['adhd_severity']
     if 0 <= adhd_severity < 33:
-        result=("Adhd Severity: Very Low. No significant depressive symptoms detected.")
+        result=("Adhd Severity: Very Low. No significant ADHD symptoms detected.")
     elif 33 <= adhd_severity < 49:
-        result=("Adhd Severity: Low. Mild depressive symptoms might be present. Consider seeking support or monitoring your well-being.")
+        result=("Adhd Severity: Low. Mild ADHD symptoms might be present. Consider seeking support or monitoring your well-being.")
     elif 49 <= adhd_severity < 67:
-        result=("Adhd Severity: Medium. Moderate depressive symptoms are likely. Seeking professional help is recommended.")
+        result=("Adhd Severity: Medium. Moderate ADHD symptoms are likely. Seeking professional help is recommended.")
     elif 67 <= adhd_severity < 100:
-        result=("Adhd Severity: High. Significant depressive symptoms are present. Professional evaluation and treatment are strongly advised.")
+        result=("Adhd Severity: High. Significant ADHD symptoms are present. Professional evaluation and treatment are strongly advised.")
     return jsonify({'adhd_severity': result})
 
 @app.route('/service/bipolar/predict', methods=['POST'])
@@ -168,13 +185,13 @@ def BipolarPredict():
     
     # Interpret the result
     if 0 <= Bipolar_severity < 33:
-        result = "Bipolar Severity: Very Low. No significant depressive symptoms detected."
+        result = "Bipolar Severity: Very Low. No significant disease symptoms detected."
     elif 33 <= Bipolar_severity < 49:
-        result = "Bipolar Severity: Low. Mild depressive symptoms might be present. Consider seeking support or monitoring your well-being."
+        result = "Bipolar Severity: Low. Mild disease symptoms might be present. Consider seeking support or monitoring your well-being."
     elif 49 <= Bipolar_severity < 67:
-        result = "Bipolar Severity: Medium. Moderate depressive symptoms are likely. Seeking professional help is recommended."
+        result = "Bipolar Severity: Medium. Moderate disease symptoms are likely. Seeking professional help is recommended."
     elif 67 <= Bipolar_severity < 100:
-        result = "Bipolar Severity: High. Significant depressive symptoms are present. Professional evaluation and treatment are strongly advised."
+        result = "Bipolar Severity: High. Significant disease symptoms are present. Professional evaluation and treatment are strongly advised."
     
     # Return result as JSON serializable format (dictionary)
     return jsonify({"message": result})

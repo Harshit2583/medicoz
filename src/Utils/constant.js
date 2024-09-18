@@ -12,12 +12,6 @@ export const diseases = [
   "Hypertension",
   "ADHD",
   "Bipolar",
-  "Heart",
-  "Stroke",
-  "Thyroid",
-  "Asthma",
-  "Breast Cancer",
-  "Lung Cancer",
 ];
 export const disease = [
   {
@@ -49,5 +43,20 @@ export const disease = [
     name:"Heart",
     description1: "type=hospital&keyword=heart",
     description2: "type=doctor&keyword=heart"
+  },
+  {
+    name:"Fever",
+    description1: "type=pharmacy",
+    description2: "type=doctor"
+  },
+  {
+    name:"Cough & Cold",
+    description1: "type=pharmacy",
+    description2: "type=doctor"
+  },
+  {
+    name:"Diarrohea",
+    description1: "type=pharmacy",
+    description2: "type=doctor"
   },
 ];

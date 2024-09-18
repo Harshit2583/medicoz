@@ -58,7 +58,7 @@ const DiabetesForm = () => {
   };
 
   return (
-    <div className="w-[72%] px-5 py-10 flex flex-col items-center bg-white rounded-md">
+    <div className="w-full md:w-[72%] px-5 py-10 flex flex-col items-center bg-white rounded-md">
       <h2 className="text-center text-4xl mb-10 border-b-[1px] border-gray-400 w-[90%] pb-3">Diabetes Prediction</h2>
       <div className="w-[90%]">
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -195,7 +195,7 @@ const DiabetesForm = () => {
       {result !== null && (
         <div>
           <h3>Diabetes Severity Prediction</h3>
-          <p>Severity: {result.toFixed(2)}</p>
+          <p>Severity: {result}</p>
         </div>
       )}
     </div>

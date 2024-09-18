@@ -25,11 +25,11 @@ const Hospital = ({ description1 }) => {
     }
   };
   return (
-    <div className="py-10">
-        <h1 className="font-sans text-4xl mb-4 font-medium">
+    <div className="py-10 r">
+        <h1 className="text-center md:text-left font-sans text-4xl mb-4 font-medium">
           Hospitals Near You
         </h1>
-        <div className=" flex flex-wrap gap-y-5 gap-x-10">
+        <div className=" flex flex-wrap md:justify-normal justify-center gap-y-5 gap-x-10">
           {hospital.map((doc) => {
             const truncatedName =
               doc.name.length > 20
