@@ -3,7 +3,6 @@ import useSignUp from "../../Hooks/useSignUp";
 import Header from "./Header";
 import { Link, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 // import Header from "./Header";
 import lang from "../../Utils/languageConstants";
 

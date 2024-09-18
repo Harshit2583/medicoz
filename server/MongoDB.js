@@ -4,8 +4,9 @@ mongoose
   .then(() => {
     console.log("MongoDB Connected");
   })
-  .catch(() => {
+  .catch((e) => {
     console.log("MongoDB Failed");
+    console.log(e)
   });
 
 const newSchema = new mongoose.Schema({

@@ -22,6 +22,7 @@ const LogIn = () => {
   const isLogged = useSelector((store) => store.auth.isLoggedIn);
   const langKey = useSelector((store) => store.config.lang);
 
+  const langKey = useSelector((store) => store.config.lang);
   useEffect(() => {
     setIsLoggedIn(isLogged);
   }, [isLogged]);
