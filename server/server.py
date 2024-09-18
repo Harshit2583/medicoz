@@ -129,13 +129,13 @@ def AdhdPredict():
         # Extract and return the result
     adhd_severity = adhd.output['adhd_severity']
     if 0 <= adhd_severity < 33:
-        result=("adhd_severity: Very Low. No significant depressive symptoms detected.")
+        result=("Adhd Severity: Very Low. No significant depressive symptoms detected.")
     elif 33 <= adhd_severity < 49:
-        result=("adhd_severity: Low. Mild depressive symptoms might be present. Consider seeking support or monitoring your well-being.")
+        result=("Adhd Severity: Low. Mild depressive symptoms might be present. Consider seeking support or monitoring your well-being.")
     elif 49 <= adhd_severity < 67:
-        result=("adhd_severity: Medium. Moderate depressive symptoms are likely. Seeking professional help is recommended.")
+        result=("Adhd Severity: Medium. Moderate depressive symptoms are likely. Seeking professional help is recommended.")
     elif 67 <= adhd_severity < 100:
-        result=("adhd_severity: High. Significant depressive symptoms are present. Professional evaluation and treatment are strongly advised.")
+        result=("Adhd Severity: High. Significant depressive symptoms are present. Professional evaluation and treatment are strongly advised.")
     return jsonify({'adhd_severity': result})
 
 @app.route('/service/bipolar/predict', methods=['POST'])
@@ -168,13 +168,13 @@ def BipolarPredict():
     
     # Interpret the result
     if 0 <= Bipolar_severity < 33:
-        result = "Bipolar_severity: Very Low. No significant depressive symptoms detected."
+        result = "Bipolar Severity: Very Low. No significant depressive symptoms detected."
     elif 33 <= Bipolar_severity < 49:
-        result = "Bipolar_severity: Low. Mild depressive symptoms might be present. Consider seeking support or monitoring your well-being."
+        result = "Bipolar Severity: Low. Mild depressive symptoms might be present. Consider seeking support or monitoring your well-being."
     elif 49 <= Bipolar_severity < 67:
-        result = "Bipolar_severity: Medium. Moderate depressive symptoms are likely. Seeking professional help is recommended."
+        result = "Bipolar Severity: Medium. Moderate depressive symptoms are likely. Seeking professional help is recommended."
     elif 67 <= Bipolar_severity < 100:
-        result = "Bipolar_severity: High. Significant depressive symptoms are present. Professional evaluation and treatment are strongly advised."
+        result = "Bipolar Severity: High. Significant depressive symptoms are present. Professional evaluation and treatment are strongly advised."
     
     # Return result as JSON serializable format (dictionary)
     return jsonify({"message": result})

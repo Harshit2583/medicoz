@@ -63,107 +63,117 @@ const Bipolar = () => {
         <form onSubmit={handleSubmit} className="space-y-5">
 
           {/* Substance Use input */}
-          <label className="block">
-            <span className="text-gray-700">Substance Use</span>
+          <div className=" gap-1 flex flex-col">
+            <span className="text-lg font-medium mr-5">Substance Use</span>
             <select
               name="Substance_Use"
               value={formData.Substance_Use}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
             >
               <option value="1">None</option>
               <option value="4">Occasional</option>
               <option value="7">Frequent</option>
               <option value="10">Very High</option>
             </select>
-          </label>
+          </div>
 
           {/* Anxiety input */}
-          <label className="block">
-            <span className="text-gray-700">Anxiety</span>
+          <div className=" gap-1 flex flex-col">
+            <span className="text-lg font-medium mr-5">Anxiety</span>
             <select
               name="Anxiety"
               value={formData.Anxiety}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
             >
               <option value="1">None</option>
               <option value="4">Mild</option>
               <option value="7">Moderate</option>
               <option value="10">Severe</option>
             </select>
-          </label>
+          </div>
 
           {/* Social Interaction input */}
-          <label className="block">
-            <span className="text-gray-700">Social Interaction</span>
+          <div className=" gap-1 flex flex-col">
+            <span className="text-lg font-medium mr-5">Social Interaction</span>
             <select
               name="Social_Interaction"
               value={formData.Social_Interaction}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
             >
               <option value="10">Very High</option>
               <option value="7">Moderate</option>
               <option value="4">Low</option>
               <option value="1">None</option>
             </select>
-          </label>
+          </div>
 
           {/* Energy Levels input */}
-          <label className="block">
-            <span className="text-gray-700">Energy Levels</span>
+          <div className=" gap-1 flex flex-col">
+            <span className="text-lg font-medium mr-5">Energy Levels</span>
             <select
               name="Energy_Levels"
               value={formData.Energy_Levels}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
             >
               <option value="10">Very High</option>
               <option value="7">Moderate</option>
               <option value="4">Low</option>
               <option value="1">Very Low</option>
             </select>
-          </label>
+          </div>
 
           {/* Family History input */}
-          <label className="block">
-            <span className="text-gray-700">Family History</span>
+          <div className=" gap-1 flex flex-col">
+            <span className="text-lg font-medium mr-5">Family History</span>
             <select
               name="Family_History"
               value={formData.Family_History}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
             >
               <option value="1">None</option>
               <option value="4">Mild</option>
               <option value="7">Moderate</option>
               <option value="10">Severe</option>
             </select>
-          </label>
+          </div>
 
           {/* Sleep Disturbance input */}
-          <label className="block">
-            <span className="text-gray-700">Sleep Disturbance</span>
+          <div className=" gap-1 flex flex-col">
+            <span className="text-lg font-medium mr-5">Sleep Disturbance</span>
             <select
               name="Sleep_Disturbance"
               value={formData.Sleep_Disturbance}
               onChange={handleChange}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
             >
               <option value="1">None</option>
               <option value="4">Mild</option>
               <option value="7">Moderate</option>
               <option value="10">Severe</option>
             </select>
-          </label>
+          </div>
 
           {/* Submit button */}
-          <div className="text-center mt-5">
+          {/* <div className="text-center mt-5">
             <button type="submit" className="border border-black px-5 py-2 rounded-md">
               Predict
             </button>
-          </div>
+          </div> */}
+          <button
+            className="learn-more submit-button w-36"
+            onClick={handleSubmit}
+            type="submit"
+          >
+            <span className="circle bg-[#546edf]" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text tracking-wider   font-semibold text-black">Submit</span>
+          </button>
         </form>
 
         {/* Display result */}

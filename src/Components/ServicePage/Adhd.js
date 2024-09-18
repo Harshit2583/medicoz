@@ -67,18 +67,17 @@ const Adhd = () => {
       <h2 className="text-center text-4xl mb-10">ADHD Prediction</h2>
       <div className="w-[90%]">
         <form onSubmit={handleSubmit} className="space-y-5">
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="Attention_Span" className="text-lg font-medium mr-5">
               Attention Span
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="Attention_Span"
               name="Attention_Span"
               onChange={handleChange}
               value={formData.Attention_Span}
             >
-              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>
@@ -86,18 +85,17 @@ const Adhd = () => {
             </select>
           </div>
 
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="Memory_Recall" className="text-lg font-medium mr-5">
               Memory Recall
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="Memory_Recall"
               name="Memory_Recall"
               onChange={handleChange}
               value={formData.Memory_Recall}
             >
-              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>
@@ -105,18 +103,17 @@ const Adhd = () => {
             </select>
           </div>
 
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="Hyperactivity" className="text-lg font-medium mr-5">
               Hyperactivity
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black "
               id="Hyperactivity"
               name="Hyperactivity"
               onChange={handleChange}
               value={formData.Hyperactivity}
             >
-              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>
@@ -124,18 +121,17 @@ const Adhd = () => {
             </select>
           </div>
 
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="Time_Management" className="text-lg font-medium mr-5">
               Time Management
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="Time_Management"
               name="Time_Management"
               onChange={handleChange}
               value={formData.Time_Management}
             >
-              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>
@@ -143,18 +139,17 @@ const Adhd = () => {
             </select>
           </div>
 
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="Family_History_of_ADHD" className="text-lg font-medium mr-5">
               Family History of ADHD
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="Family_History_of_ADHD"
               name="Family_History_of_ADHD"
               onChange={handleChange}
               value={formData.Family_History_of_ADHD}
             >
-              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>
@@ -162,18 +157,17 @@ const Adhd = () => {
             </select>
           </div>
 
-          <div className=" gap-1 flex">
+          <div className=" gap-1 flex flex-col">
             <label htmlFor="Impulsivity" className="text-lg font-medium mr-5">
               Impulsivity
             </label>
             <select
-              className="border border-black px-2 rounded-md font-medium "
+              className="px-3 py-2 rounded-md w-[60%] outline-none font-medium border border-black"
               id="Impulsivity"
               name="Impulsivity"
               onChange={handleChange}
               value={formData.Impulsivity}
             >
-              <option value="">Select</option>
               <option value="1">Mild</option>
               <option value="4">Moderate</option>
               <option value="7">Severe</option>
@@ -181,16 +175,26 @@ const Adhd = () => {
             </select>
           </div>
 
-          <div className="text-center mt-5">
+          {/* <div className="text-center mt-5">
             <button type="submit" className="border border-black px-5 py-2 rounded-md">
               Predict
             </button>
-          </div>
+          </div> */}
+          <button
+            className="learn-more submit-button w-36"
+            onClick={handleSubmit}
+            type="submit"
+          >
+            <span className="circle bg-[#546edf]" aria-hidden="true">
+              <span className="icon arrow"></span>
+            </span>
+            <span className="button-text tracking-wider   font-semibold text-black">Submit</span>
+          </button>
         </form>
 
         {result && (
           <div className="mt-5">
-            <h3 className="text-xl">Predicted ADHD Severity: {result}</h3>
+            <h3 className="text-xl">{result}</h3>
           </div>
         )}
 
