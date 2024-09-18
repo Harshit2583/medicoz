@@ -40,8 +40,6 @@ const LogIn = () => {
           <h1 className="text-3xl font-medium mb-10 mt-2">{lang[langKey].login}</h1>
           <input
             type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
             placeholder={lang[langKey].email}
             onChange={(e) => {
               setEmail(e.target.value);
@@ -50,8 +48,6 @@ const LogIn = () => {
           />
           <input
             type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
             placeholder={lang[langKey].password}
             onChange={(e) => {
               setPassword(e.target.value);
@@ -74,8 +70,6 @@ const LogIn = () => {
               checked={isRemember}
               onChange={handleRemember}
             />
-            Remember Me
-            ></input>
             {lang[langKey].remember}
           </div>
           <button className="Btn-Container mb-10" onClick={handleLogin}>
@@ -107,11 +101,11 @@ const LogIn = () => {
 
           <div className="text-center text-xs font-medium mb-4">
             <p className="mb-1">Forgot Password</p>
-            <span>
+            <div>
               Don't have an account?
               <Link to="/signup">
                 <span className="text-blue-500 cursor-pointer"> Sign Up </span>
-              </Link>
+              </Link></div>
             <p className="mb-1">{lang[langKey].forgotpassword}</p>
             <span className="">
             {lang[langKey].haveAccount}
