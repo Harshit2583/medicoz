@@ -5,9 +5,7 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import Logo from "../Common/Logo";
 import Header from "./Header";
-import { Link } from "react-router-dom";
 import lang from "../../Utils/languageConstants";
-import { useSelector } from "react-redux";
 
 const LogIn = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -23,6 +21,7 @@ const LogIn = () => {
 
   const isLogged = useSelector((store) => store.auth.isLoggedIn);
 
+  const langKey = useSelector((store) => store.config.lang);
   useEffect(() => {
     setIsLoggedIn(isLogged);
   }, [isLogged]);
@@ -31,7 +30,6 @@ const LogIn = () => {
     return <Navigate to="/" />;
   }
 
-  const langKey = useSelector((store) => store.config.lang);
 
   return (
     <div className="font-poppins">
