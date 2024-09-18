@@ -76,8 +76,8 @@ const Header = () => {
                   isActive("/shopping") ? "underline underline-offset-8" : ""
                 } ${langKey === "हिन्दी" ? "font-semibold tracking-wide" : ""}`}
               >
-                {/* {lang[langKey].doctor} */}
-                Shopping
+                {lang[langKey].shopping}
+                {/* Shopping */}
               </li>{" "}
             </Link>
             <li className="mr-2 ml-3 rounded-md">

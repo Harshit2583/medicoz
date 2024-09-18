@@ -3,6 +3,8 @@ import useLogin from "../../Hooks/useLogin";
 import Logo from "../Common/Logo";
 import Header from "./Header";
 import { Link } from "react-router-dom";
+import lang from "../../Utils/languageConstants";
+import { useSelector } from "react-redux";
 
 const LogIn = () => {
   const {
@@ -16,15 +18,17 @@ const LogIn = () => {
     handleLogin,
   } = useLogin();
 
+  const langKey = useSelector((store) => store.config.lang);
+
   return (
     <div className="font-poppins">
       {/* <Header /> */}
       <div className="body-bg h-screen flex items-center justify-center pt-20">
         <div className="bg-white p-16 px-10 flex flex-col items-center rounded-lg w-[90%] sm:w-[45%] md:w-[35%] lg:w-[30%] xl:w-[22%] shadow-lg">
-          <h1 className="text-3xl font-medium mb-10 mt-2">Login</h1>
+          <h1 className="text-3xl font-medium mb-10 mt-2">{lang[langKey].login}</h1>
           <input
             type="email"
-            placeholder="Email"
+            placeholder={lang[langKey].email}
             onChange={(e) => {
               setEmail(e.target.value);
             }}
@@ -32,7 +36,7 @@ const LogIn = () => {
           ></input>
           <input
             type="password"
-            placeholder="Password"
+            placeholder={lang[langKey].password}
             onChange={(e) => {
               setPassword(e.target.value);
             }}
@@ -54,11 +58,11 @@ const LogIn = () => {
               checked={isRemember}
               onChange={handleRemember}
             ></input>
-            Remember Me
+            {lang[langKey].remember}
           </div>
           <button className="Btn-Container mb-10" onClick={handleLogin}>
             <span className="text">
-              Login {isSubmitting && <LoadingIcon content={""} />}
+            {lang[langKey].login}{isSubmitting && <LoadingIcon content={""} />}
             </span>
 
             <span className="icon-Container">
@@ -84,16 +88,16 @@ const LogIn = () => {
           </button>
 
           <div className="text-center text-xs font-medium mb-4">
-            <p className="mb-1">Forgot Password</p>
+            <p className="mb-1">{lang[langKey].forgotpassword}</p>
             <span className="">
-              Don't have an account?
+            {lang[langKey].haveAccount}
               <Link to={"/signup"}>
               <span
                 
                 className="text-blue-500 cursor-pointer"
               >
                 {" "}
-                Sign Up{" "}
+                {lang[langKey].signUp}{" "}
               </span></Link>
             </span>
           </div>
