@@ -59,7 +59,7 @@ const DiabetesForm = () => {
 
   return (
     <div className="w-[72%] px-5 py-10 flex flex-col items-center bg-white rounded-md">
-      <h2 className="text-center text-4xl mb-10">Diabetes Prediction</h2>
+      <h2 className="text-center text-4xl mb-10 border-b-[1px] border-gray-400 w-[90%] pb-3">Diabetes Prediction</h2>
       <div className="w-[90%]">
         <form onSubmit={handleSubmit} className="space-y-5">
           <div className=" gap-1 flex flex-col">

@@ -11,6 +11,7 @@ import HeaderDropDown from "./HeaderDropDown";
 import LanguageDropDown from "./LanguageDropDown";
 
 const Header = () => {
+  const isLoggedIn = useSelector((store) => store.auth.isLoggedIn);
   const location = useLocation();
   const isActive = (path) => location.pathname === path;
   const dispatch = useDispatch();
@@ -79,8 +80,7 @@ const Header = () => {
                 {lang[langKey].shopping}
                 {/* Shopping */}
               </li>{" "}
-            </Link>
-            <li className="mr-2 ml-3 rounded-md">
+            </Link><li className="mr-2 ml-3 rounded-md">
               <Link to={"/contact"}>
                 <button className="p-2 contact-button font-semibold">
                   {lang[langKey].connectwithus}
