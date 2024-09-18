@@ -6,6 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the fuzzy logic model
+Bipolar = pickle.load(open('medicoz_SIH005\server\Bipolar\Bipolar.pkl', 'rb'))
 adhd = pickle.load(open('medicoz_SIH005\server\Adhd\Adhd.pkl', 'rb'))
 diabetes_simulation = pickle.load(open('medicoz_SIH005\server\OptimizedFuzzyDiabetes.pkl', 'rb'))
 hyper = pickle.load(open('medicoz_SIH005\server\hypertension\hypertension.pkl', 'rb'))
@@ -136,5 +137,46 @@ def AdhdPredict():
     elif 67 <= adhd_severity < 100:
         result=("adhd_severity: High. Significant depressive symptoms are present. Professional evaluation and treatment are strongly advised.")
     return jsonify({'adhd_severity': result})
+
+@app.route('/service/bipolar/predict', methods=['POST'])
+def BipolarPredict():
+    # Log the received data for debugging purposes
+    print("Received data:", request.json)
+    
+    # Parse incoming data from the request
+    data = request.json
+    SB_val = float(data.get('Substance_Use'))
+    A_val = float(data.get('Anxiety'))
+    SI_val = float(data.get('Social_Interaction'))
+    EL_val = float(data.get('Energy_Levels'))
+    FH_val = float(data.get('Family_History'))
+    SD_val = float(data.get('Sleep_Disturbance'))
+    
+    # Set the fuzzy logic inputs
+    Bipolar.input['Substance_Use'] = SB_val
+    Bipolar.input['Anxiety'] = A_val
+    Bipolar.input['Social_Interaction'] = SI_val
+    Bipolar.input['Energy_Levels'] = EL_val
+    Bipolar.input['Family_History'] = FH_val
+    Bipolar.input['Sleep_Disturbance'] = SD_val
+    
+    # Compute the fuzzy logic output
+    Bipolar.compute()
+    
+    # Extract the result
+    Bipolar_severity = Bipolar.output['bipolar_level']
+    
+    # Interpret the result
+    if 0 <= Bipolar_severity < 33:
+        result = "Bipolar_severity: Very Low. No significant depressive symptoms detected."
+    elif 33 <= Bipolar_severity < 49:
+        result = "Bipolar_severity: Low. Mild depressive symptoms might be present. Consider seeking support or monitoring your well-being."
+    elif 49 <= Bipolar_severity < 67:
+        result = "Bipolar_severity: Medium. Moderate depressive symptoms are likely. Seeking professional help is recommended."
+    elif 67 <= Bipolar_severity < 100:
+        result = "Bipolar_severity: High. Significant depressive symptoms are present. Professional evaluation and treatment are strongly advised."
+    
+    # Return result as JSON serializable format (dictionary)
+    return jsonify({"message": result})
 if __name__ == '__main__':
     app.run(debug=True)

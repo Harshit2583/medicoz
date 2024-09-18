@@ -11,7 +11,7 @@ export const diseases = [
   "Diabetes",
   "Hypertension",
   "ADHD",
-  "Aids",
+  "Bipolar",
   "Heart",
   "Stroke",
   "Thyroid",
