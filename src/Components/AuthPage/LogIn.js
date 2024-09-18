@@ -3,6 +3,11 @@ import useLogin from "../../Hooks/useLogin";
 import { Link, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
+import Logo from "../Common/Logo";
+import Header from "./Header";
+import { Link } from "react-router-dom";
+import lang from "../../Utils/languageConstants";
+import { useSelector } from "react-redux";
 
 const LogIn = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -26,21 +31,27 @@ const LogIn = () => {
     return <Navigate to="/" />;
   }
 
+  const langKey = useSelector((store) => store.config.lang);
+
   return (
     <div className="font-poppins">
       <div className="body-bg h-screen flex items-center justify-center pt-20">
         <div className="bg-white p-16 px-10 flex flex-col items-center rounded-lg w-[90%] sm:w-[45%] md:w-[35%] lg:w-[30%] xl:w-[22%] shadow-lg">
-          <h1 className="text-3xl font-medium mb-10 mt-2">Login</h1>
+          <h1 className="text-3xl font-medium mb-10 mt-2">{lang[langKey].login}</h1>
           <input
             type="email"
-            placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)}
+            placeholder={lang[langKey].email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
             className="block py-1 border-b-2 border-black mb-6 outline-none font-medium w-full"
           />
           <input
             type="password"
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
+            placeholder={lang[langKey].password}
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
             className="block py-1 border-b-2 border-black outline-none font-medium w-full"
           />
           <div className="mt-1 w-full">
@@ -59,11 +70,12 @@ const LogIn = () => {
               checked={isRemember}
               onChange={handleRemember}
             />
-            Remember Me
+            {lang[langKey].remember}
           </div>
           <button className="Btn-Container mb-10" onClick={handleLogin}>
             <span className="text">
               Login {isSubmitting && <LoadingIcon content="" />}
+            {lang[langKey].login}{isSubmitting && <LoadingIcon content={""} />}
             </span>
             <span className="icon-Container">
               <svg
@@ -89,11 +101,22 @@ const LogIn = () => {
 
           <div className="text-center text-xs font-medium mb-4">
             <p className="mb-1">Forgot Password</p>
-            <span>
+            <div>
               Don't have an account?
               <Link to="/signup">
                 <span className="text-blue-500 cursor-pointer"> Sign Up </span>
-              </Link>
+              </Link></div>
+            <p className="mb-1">{lang[langKey].forgotpassword}</p>
+            <span className="">
+            {lang[langKey].haveAccount}
+              <Link to={"/signup"}>
+              <span
+                
+                className="text-blue-500 cursor-pointer"
+              >
+                {" "}
+                {lang[langKey].signUp}{" "}
+              </span></Link>
             </span>
           </div>
         </div>
