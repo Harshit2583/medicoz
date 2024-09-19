@@ -31,7 +31,8 @@
     "build": "react-scripts build",
     "razorpay": "nodemon server/razorpayRoutes.js",
     "database": "nodemon server/authRoutes.js",
-    "dev": "concurrently \"npm run razorpay\" \"npm run database\"",
+    "googleapi": "nodemon server/googleapi.js",
+    "dev": "concurrently \"npm run razorpay\" \"npm run database\" \"npm run googleapi\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

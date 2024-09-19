@@ -15,19 +15,18 @@ const DoctorList = ({ description1, description2 }) => {
     fetchDoctor();
   }, [description2]);
   const showDoctor = async () => {
-    try {
-      const data = await fetch(
-        "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=31.2245%2C75.7718&radius=1500&" +
-          description2 +
-          "&key=AIzaSyCZ4SEGIjhfwioLKuVtQvNS5WP4T_aY4O4"
-      );
-      const json = await data.json();
-      setDoctor(json?.results || []);
-      setLoading(false)
-    } catch (error) {
-      console.error("Error fetching doctor data:", error);
-    }
-  };
+  try {
+    const response = await fetch(
+      `http://localhost:2000/api/doctor?description2=${description2}` // Local API endpoint
+    );
+    
+    const json = await response.json(); // Parse the JSON data
+    setDoctor(json?.results || []); // Set the doctor data in the state
+    setLoading(false);
+  } catch (error) {
+    console.error("Error fetching doctor data:", error);
+  }
+};
 if(loading){
     return (
         <div className="flex justify-center w-[80%] ">

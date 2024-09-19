@@ -12,18 +12,17 @@ const Hospital = ({ description1 }) => {
   }, [description1]);
 
   const showHospital = async () => {
-    try {
-      const data = await fetch(
-        "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=31.2245%2C75.7718&radius=1500&" +
-          description1 +
-          "&key=AIzaSyCZ4SEGIjhfwioLKuVtQvNS5WP4T_aY4O4"
-      );
-      const json = await data.json();
-      setHospital(json?.results || []);
-    } catch (error) {
-      console.error("Error fetching hospital data:", error);
-    }
-  };
+  try {
+    const response = await fetch(
+      `http://localhost:2000/api/doctor?description2=${description1}` // Local API endpoint
+    );
+    
+    const json = await response.json(); // Parse the JSON data
+    setHospital(json?.results || []); // Set the doctor data in the state
+  } catch (error) {
+    console.error("Error fetching hospital data:", error);
+  }
+};
   return (
     <div className="py-10 r">
         <h1 className="text-center md:text-left font-sans text-4xl mb-4 font-medium">
