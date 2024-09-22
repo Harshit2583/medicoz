@@ -11,7 +11,6 @@ app.use(cors());
 // Proxy endpoint to Google Places API
 app.get('/api/doctor', async (req, res) => {
   const description2 = req.query.description2;
-  console.log(description2)
   try {
     // Make a request to the Google Places API
     const response = await fetch(
