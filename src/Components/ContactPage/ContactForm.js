@@ -3,7 +3,8 @@ import lang from "../../Utils/languageConstants";
 import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { checkContactFormData } from "../../Utils/validate";
-// import LoadingIcon from "../Common/LoadingIcon";
+import LoadingIcon from "../Common/LoadingIcon";
+
 
 const ContactForm = () => {
   const form = useRef();
@@ -31,7 +32,8 @@ const ContactForm = () => {
     }
     emailjs
       .sendForm("service_g6vnxum", "template_3vtv6n9", form.current, {
-        publicKey: "x8_bsCgzcT2SFta-6",
+        publicKey: process.env.REACT_APP_EMAIL_JS_PUBLIC_KEY,
+
       })
       .then(
         () => {
@@ -40,6 +42,7 @@ const ContactForm = () => {
         },
         (error) => {
           alert("Could not Submit. Please Try Again!");
+          setIsSubmitting(false);
         }
       );
   };
@@ -53,7 +56,7 @@ const ContactForm = () => {
             ref={name}
             type="text"
             name="from_name"
-            className=" w-full xl:w-[31.25rem] p-2 block mt-1 mb-6 shadow-md rounded-md outline-none"
+            className=" w-full xl:w-[31.25rem] p-2 block mt-1 mb-6 shadow-md rounded-md outline-none font-medium"
             placeholder={lang[langKey].name}
           ></input>
           <label className="font-medium text-white">{lang[langKey].email}</label>
@@ -61,7 +64,7 @@ const ContactForm = () => {
             ref={email}
             type="text"
             name="email_id"
-            className="w-full xl:w-[31.25rem] p-2 block mt-1 mb-6 shadow-md rounded-md outline-none"
+            className="w-full xl:w-[31.25rem] p-2 block mt-1 mb-6 shadow-md rounded-md outline-none font-medium"
             placeholder={lang[langKey].email}
           ></input>
           <label className="font-medium text-white">{lang[langKey].phonenumber}</label>{" "}
@@ -69,13 +72,13 @@ const ContactForm = () => {
             ref={phone}
             type="text"
             name="contact_number"
-            className="w-full xl:w-[31.25rem] p-2 block mt-1 mb-6 shadow-md rounded-md outline-none"
+            className="w-full xl:w-[31.25rem] p-2 block mt-1 mb-6 shadow-md rounded-md outline-none font-medium"
             placeholder={lang[langKey].phonenumber}
           ></input>
           <label className="font-large text-white">{lang[langKey].message}</label>
           <textarea
             ref={query}
-            className="w-full xl:w-[31.25rem] p-2 block mt-1 mb-1 h-52 shadow-md rounded-md outline-none"
+            className="w-full xl:w-[31.25rem] p-2 block mt-1 mb-1 h-52 shadow-md rounded-md outline-none font-medium"
             name="message"
             placeholder={
               lang[langKey].message + " (should be atleast 15 letters)"
@@ -103,8 +106,8 @@ const ContactForm = () => {
                 {lang[langKey].submit}
               </span>
             </button>
-            {/* {isSubmitting && <LoadingIcon content={"Submitting..."}/>
-            } */}
+            {isSubmitting && <LoadingIcon content={"Submitting..."}/>
+            } 
           </div>
         </form>
       </div>
