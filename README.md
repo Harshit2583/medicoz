@@ -2,23 +2,27 @@
 
 ## Overview
 
-This project is a collaborative effort to build a comprehensive health platform designed to address the lack of access to personalized health insights. It helps individuals manage chronic conditions such as diabetes, hypertension, and heart disease more effectively. The platform integrates predictive analytics, doctor and hospital recommendations, e-commerce for health monitoring devices, and secure user authentication.
+This project is a collaborative effort to build a comprehensive health platform designed to address the lack of access to personalized health insights. It helps individuals manage chronic conditions such as depression, diabetes, hypertension, and heart diseases more effectively. The platform integrates predictive analytics, doctor and hospital recommendations, e-commerce for health monitoring devices, and secure user authentication.
 
 ## Key Features
 
 1. **Nearby Doctor and Hospital Recommendations**:
-   - Recommends nearby doctors and hospitals based on a user's condition (e.g., diabetes, hypertension) using the **Google Places API**.
+- Recommends nearby doctors and hospitals based on a user's condition (e.g., diabetes, hypertension) using the **Google Places API**.
 
 2. **E-Commerce for Health Monitoring Devices**:
-   - Users can purchase health monitoring devices such as blood pressure monitors and glucometers.
-   - **RazorPay API** is integrated for secure and smooth transactions.
+- Users can purchase health monitoring devices such as blood pressure monitors and glucometers.
+- **RazorPay API** is integrated for secure and smooth transactions.
 
 3. **Predictive Health Insights**:
-   - The platform uses predictive models to analyze health data and provide severity assessments for chronic conditions like diabetes and heart disease.
-   - Predictive analytics are implemented using **Flask**.
+- The platform uses predictive models to analyze health data and provide severity assessments for chronic conditions like diabetes and heart disease.
+- Predictive analytics are implemented using **Flask**.
 
 4. **User Authentication**:
-   - Provides a secure login page with user authentication managed by **MongoDB**, ensuring that users can access their personalized health data safely.
+- Provides a secure login page with user authentication managed by **MongoDB**, ensuring that users can access their personalized health data safely.
+  
+5. **Chat Bot**:
+- The platform features a chat bot, built with **Botpress**, to provide users with personalized health information, answer FAQs, and offer guidance on chronic condition management.
+- The chat bot is integrated into the platform to enhance user experience by providing real-time support and information.
 
 ## Technology Stack
 
@@ -39,6 +43,7 @@ This project is a collaborative effort to build a comprehensive health platform 
 - **Google Places API**: Used for recommending nearby healthcare providers based on the user's condition.
 - **RazorPay API**: Used for secure transactions in the e-commerce section.
 - **EmailJs API**: Used for sending email notifications and confirmations.
+- **Bot Press**: Used for personalized health information, answer FAQs, and offer guidance on chronic condition management.
 
 ## Installation and Setup
 
@@ -93,6 +98,11 @@ Create a `.env` file in the root directory (or respective directories) to store 
 4. **E-Commerce Section**:
 - Users can purchase health monitoring devices such as blood pressure monitors or glucometers.
 - All transactions are securely handled using the **RazorPay API** for a smooth purchasing experience.
+
+5. **Chat Bot**:
+- The platform features a chat bot, built with **Botpress**, to provide users with personalized health information, answer FAQs, and offer guidance on chronic condition management.
+- The chat bot is integrated into the platform to enhance user experience by providing real-time support and information.
+
 
 ## Contributing
 
