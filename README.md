@@ -1,4 +1,4 @@
-# Comprehensive Health Platform
+# Medicoz - Diagnosing Today Securing Tomorrow
 
 ## Overview
 
@@ -44,7 +44,7 @@ This project is a collaborative effort to build a comprehensive health platform 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/omkeshri/medicoz.git
+    [git clone https://github.com/omkeshri/medicoz.git](https://github.com/omkeshri/medicoz.git)
     ```
 
 2. Navigate to the project directory:
@@ -75,7 +75,7 @@ This project is a collaborative effort to build a comprehensive health platform 
 ## Environment Variables:
 
 Create a `.env` file in the root directory (or respective directories) to store API keys and MongoDB connection strings. Add the following keys:
-`REACT_APP_EMAIL_JS_PUBLIC_KEY` `GOOGLE_PLACES_API_KEY` `RAZORPAY_KEY_ID` `RAZORPAY_KEY_SECRET`
+`REACT_APP_EMAIL_JS_PUBLIC_KEY`  `GOOGLE_PLACES_API_KEY`  `RAZORPAY_KEY_ID`  `RAZORPAY_KEY_SECRET`
 
 ## Usage
 
