@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a collaborative effort to build a comprehensive health platform designed to address the lack of access to personalized health insights. It helps individuals manage chronic conditions such as depression, diabetes, hypertension, and heart diseases more effectively. The platform integrates predictive analytics, doctor and hospital recommendations, e-commerce for health monitoring devices, and secure user authentication.
+This project is a collaborative effort to build a comprehensive health platform designed to address the lack of access to personalized health insights. It helps individuals manage chronic conditions such as depression, diabetes, hypertension, and heart diseases more effectively. The platform integrates predictive analytics, doctor and hospital recommendations, e-commerce for health monitoring devices, and secure user authentication. Additionally, it features an automated chatbot that facilitates communication for symptom identification and disease-related information, enhancing user engagement and support.
 
 ## Key Features
 
