@@ -79,18 +79,18 @@ Create a `.env` file in the root directory (or respective directories) to store 
 
 ## Usage
 
-### 1. **Login and Authentication**:
+1. **Login and Authentication**:
 - Users can register and log in to access personalized health insights, doctor recommendations, and the e-commerce section.
 - User authentication and data management are handled securely with **MongoDB**.
 
-### 2. **Health Data Insights**:
+2. **Health Data Insights**:
 - Users can input health data related to chronic conditions such as diabetes or hypertension.
 - The system leverages machine learning models to analyze the data and provide severity assessments.
 
-### 3. **Nearby Doctor and Hospital Recommendations**:
+3. **Nearby Doctor and Hospital Recommendations**:
 - The platform uses the **Google Places API** to recommend nearby doctors and hospitals based on the user’s health condition.
 
-### 4. **E-Commerce Section**:
+4. **E-Commerce Section**:
 - Users can purchase health monitoring devices such as blood pressure monitors or glucometers.
 - All transactions are securely handled using the **RazorPay API** for a smooth purchasing experience.
 
