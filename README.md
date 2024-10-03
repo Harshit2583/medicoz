@@ -44,7 +44,7 @@ This project is a collaborative effort to build a comprehensive health platform 
 
 1. Clone the repository:
     ```bash
-    [git clone https://github.com/omkeshri/medicoz.git](https://github.com/omkeshri/medicoz.git)
+    https://github.com/omkeshri/medicoz.git
     ```
 
 2. Navigate to the project directory:
