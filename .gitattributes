@@ -1,2 +1,2 @@
 # Ignore Jupyter Notebook files from language stats
-*.ipynb linguist-language=plaintext
+*.ipynb linguist-language=Markdown
