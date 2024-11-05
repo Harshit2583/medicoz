@@ -3,25 +3,19 @@ import facebook from "../../Images/FacebookLogo.png";
 import instagram from "../../Images/InstagramLogo.png";
 import github from "../../Images/GithubLogo.png";
 import { Link } from "react-router-dom";
-import lang from "../../Utils/languageConstants";
-import { useSelector } from "react-redux";
-
 
 const FooterAbout = () => {
-  const langKey = useSelector((store) => store.config.lang);
   return (
     <div>
       <div className="w-64 md:w-56">
         <h1 className="font-medium text-4xl font-serif mt-2">Medicoz</h1>
         <p className=" text-xs font-semibold mb-5">
-        {lang[langKey].tagline}
-          {/* Diagnosing Today Securing Tomorrow */}
-        </p>w
+          Diagnosing Today Securing Tomorrow
+        </p>
         <p className="text-xs mb-3 tracking-wider">
-        {lang[langKey].trustus}
-          {/* Your trusted partner in health and wellness, providing expert care and
+          Your trusted partner in health and wellness, providing expert care and
           personalized treatment plans. Together, we prioritize your well-being,
-          ensuring a healthier, happier tomorrow. */}
+          ensuring a healthier, happier tomorrow.
         </p>
         <div className="flex gap-2">
           <Link to={""} target="blank">

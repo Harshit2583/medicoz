@@ -5,13 +5,7 @@ import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import Logo from "../Common/Logo";
 import Header from "./Header";
-<<<<<<< HEAD
 import lang from "../../Utils/languageConstants";
-=======
-// import { Link } from "react-router-dom";
-import lang from "../../Utils/languageConstants";
-// import { useSelector } from "react-redux";
->>>>>>> 89a1647 (Description of your changes)
 
 const LogIn = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,7 +22,6 @@ const LogIn = () => {
   const isLogged = useSelector((store) => store.auth.isLoggedIn);
   const langKey = useSelector((store) => store.config.lang);
 
-  const langKey = useSelector((store) => store.config.lang);
   useEffect(() => {
     setIsLoggedIn(isLogged);
   }, [isLogged]);
