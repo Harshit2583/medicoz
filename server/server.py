@@ -6,11 +6,11 @@ app = Flask(__name__)
 CORS(app)
 
 # Load the fuzzy logic model
-Bipolar = pickle.load(open('medicoz_SIH005\server\Bipolar\Bipolar.pkl', 'rb'))
-adhd = pickle.load(open('medicoz_SIH005\server\Adhd\Adhd.pkl', 'rb'))
-diabetes_simulation = pickle.load(open('medicoz_SIH005\server\OptimizedFuzzyDiabetes.pkl', 'rb'))
-hyper = pickle.load(open('medicoz_SIH005\server\hypertension\hypertension.pkl', 'rb'))
-depression_simulation = pickle.load(open('medicoz_SIH005\server\Depression\OptimizedFuzzyDepression.pkl', 'rb'))
+Bipolar = pickle.load(open('server\Bipolar\Bipolar.pkl', 'rb'))
+adhd = pickle.load(open('server\Adhd\Adhd.pkl', 'rb'))
+diabetes_simulation = pickle.load(open('server\OptimizedFuzzyDiabetes.pkl', 'rb'))
+hyper = pickle.load(open('server\hypertension\hypertension.pkl', 'rb'))
+depression_simulation = pickle.load(open('server\Depression\OptimizedFuzzyDepression.pkl', 'rb'))
 @app.route('/service/diabetes/predict', methods=['POST'])
 def DiabetesPredict():
     data = request.json
