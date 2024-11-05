@@ -4,8 +4,9 @@ import Header from "./Header";
 import { Link, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 // import Header from "./Header";
+import { Link } from "react-router-dom";
 import lang from "../../Utils/languageConstants";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 const SignUp = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -18,8 +19,7 @@ const SignUp = () => {
     handleSignIn
   } = useSignUp();
   const isLogged = useSelector((store) => store.auth.isLoggedIn);
-  const langKey = useSelector((store) => store.config.lang); 
-  
+
   useEffect(() => {
     setIsLoggedIn(isLogged);
   }, [isLogged]);
@@ -27,7 +27,8 @@ const SignUp = () => {
   if (isLoggedIn) {
     return <Navigate to="/" />;
   }
-  
+ 
+  const langKey = useSelector((store) => store.config.lang); 
   return (
     <div className="font-poppins">
       {/* <Header/> */}
