@@ -1,5 +1,5 @@
 import MainContainerContent from "./MainContainerContent";
-import Gradients from "../Common/Gradients";
+import Gradients from "../Common/Gradients.jsx";
 import plusSign from "../../Images/PlusSign.png";
 import plusSignWhite from "../../Images/PlusSignWhite.png";
 import Lottie from "react-lottie";

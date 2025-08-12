@@ -1,6 +1,6 @@
 import ContactContent from "./ContactContent";
 import ContactForm from "./ContactForm";
-import Gradients from "../Common/Gradients";
+import Gradients from "../Common/Gradients.jsx";
 
 const Contact = () => {
   return (

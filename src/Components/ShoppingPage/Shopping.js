@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import Gradients from "../Common/Gradients";
+import Gradients from "../Common/Gradients.jsx";
 import MainContainer from "./MainContainer";
 import LoginShimmer from "../ShimmerPage/LoginShimmer";
 
