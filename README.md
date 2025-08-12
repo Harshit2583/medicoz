@@ -2,6 +2,8 @@
 
 This project is a collaborative effort to build a comprehensive health platform designed to address the lack of access to personalized health insights. It helps individuals manage chronic conditions such as depression, diabetes, hypertension, and heart diseases more effectively. The platform integrates predictive analytics, doctor and hospital recommendations, e-commerce for health monitoring devices, and secure user authentication. Additionally, it features an automated chatbot that facilitates communication for symptom identification and disease-related information, enhancing user engagement and support.
 
+##Link - https://medimeet1.vercel.app/
+
 ## Key Features
 
 1. **Nearby Doctor and Hospital Recommendations**:
@@ -109,3 +111,4 @@ Feel free to fork this repository and contribute by submitting a pull request. F
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
