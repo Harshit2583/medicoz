@@ -24,3 +24,9 @@ yarn-error.log*
 
 notes.md
 .env
+
+# Deployment files
+vercel.json
+
+DEPLOYMENT.md
+
