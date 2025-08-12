@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .container { max-width: 400px; margin: 0 auto; }
+        input, button { width: 100%; padding: 10px; margin: 10px 0; }
+        .result { margin-top: 20px; padding: 10px; border-radius: 5px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Login Test</h2>
+        
+        <h3>Test Login</h3>
+        <input type="email" id="loginEmail" placeholder="Email" value="test@test.com">
+        <input type="password" id="loginPassword" placeholder="Password" value="password">
+        <button onclick="testLogin()">Test Login</button>
+        <div id="loginResult" class="result"></div>
+
+        <h3>Test Signup</h3>
+        <input type="text" id="signupName" placeholder="Name" value="Test User">
+        <input type="email" id="signupEmail" placeholder="Email" value="newuser@test.com">
+        <input type="password" id="signupPassword" placeholder="Password" value="Password123">
+        <button onclick="testSignup()">Test Signup</button>
+        <div id="signupResult" class="result"></div>
+
+        <h3>Test ML Service</h3>
+        <button onclick="testMLService()">Test Bipolar Prediction</button>
+        <div id="mlResult" class="result"></div>
+    </div>
+
+    <script>
+        async function testLogin() {
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            const resultDiv = document.getElementById('loginResult');
+
+            try {
+                const response = await fetch('http://localhost:8000/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const result = await response.text();
+                
+                if (result === 'exist') {
+                    resultDiv.innerHTML = '✅ Login successful!';
+                    resultDiv.className = 'result success';
+                } else {
+                    resultDiv.innerHTML = `❌ Login failed: ${result}`;
+                    resultDiv.className = 'result error';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `❌ Error: ${error.message}`;
+                resultDiv.className = 'result error';
+            }
+        }
+
+        async function testSignup() {
+            const name = document.getElementById('signupName').value;
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const resultDiv = document.getElementById('signupResult');
+
+            try {
+                const response = await fetch('http://localhost:8000/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password })
+                });
+                const result = await response.text();
+                
+                if (result === 'Sign Up Successfull') {
+                    resultDiv.innerHTML = '✅ Signup successful!';
+                    resultDiv.className = 'result success';
+                } else {
+                    resultDiv.innerHTML = `❌ Signup failed: ${result}`;
+                    resultDiv.className = 'result error';
+                }
+            } catch (error) {
+                resultDiv.innerHTML = `❌ Error: ${error.message}`;
+                resultDiv.className = 'result error';
+            }
+        }
+
+        async function testMLService() {
+            const resultDiv = document.getElementById('mlResult');
+
+            try {
+                const response = await fetch('http://localhost:5000/service/bipolar/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        Substance_Use: 50,
+                        Anxiety: 50,
+                        Social_Interaction: 50,
+                        Energy_Levels: 50,
+                        Family_History: 50,
+                        Sleep_Disturbance: 50
+                    })
+                });
+                const result = await response.json();
+                
+                resultDiv.innerHTML = `✅ ML Service working: ${result.message}`;
+                resultDiv.className = 'result success';
+            } catch (error) {
+                resultDiv.innerHTML = `❌ ML Service error: ${error.message}`;
+                resultDiv.className = 'result error';
+            }
+        }
+    </script>
+</body>
+</html>
