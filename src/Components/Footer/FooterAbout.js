@@ -13,7 +13,7 @@ const FooterAbout = () => {
           Diagnosing Today Securing Tomorrow
         </p>
         <p className="text-xs mb-3 tracking-wider">
-          Your trusted partner in health and wellness, providing expert care and
+          Your trusted partner in health and wellness , providing expert care and
           personalized treatment plans. Together, we prioritize your well-being,
           ensuring a healthier, happier tomorrow.
         </p>
