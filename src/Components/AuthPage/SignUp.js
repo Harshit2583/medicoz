@@ -15,6 +15,7 @@ const SignUp = () => {
     password,
     submitMessage,
     isSubmitting,
+    isRedirecting,
     handleSignIn
   } = useSignUp();
   const isLogged = useSelector((store) => store.auth.isLoggedIn);
@@ -39,28 +40,41 @@ const SignUp = () => {
           type="text"
           placeholder= {lang[langKey].name}
           className="block py-1 border-b-2 border-black mb-6 outline-none font-medium w-full"
+          disabled={isRedirecting}
         ></input>
         <input
           ref={email}
           type="email"
           placeholder={lang[langKey].email}
           className="block py-1 border-b-2 border-black mb-6 outline-none font-medium w-full"
+          disabled={isRedirecting}
         ></input>
         <input
           ref={password}
           type="password"
           placeholder={lang[langKey].password}
           className="block py-1 border-b-2 border-black outline-none font-medium w-full"
+          disabled={isRedirecting}
         ></input>
         <div className="mb-9 mt-1 w-full">
           {submitMessage && (
-            <div className="text-red-500 font-medium text-sm tracking-wide">
+            <div className={`font-medium text-sm tracking-wide ${isRedirecting ? 'text-green-600' : 'text-red-500'}`}>
               <span className="font-semibold">&#9432; </span>
               {submitMessage}
+              {isRedirecting && (
+                <div className="mt-2 flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-green-600 mr-2"></div>
+                  <span>Redirecting...</span>
+                </div>
+              )}
             </div>
           )}
         </div>
-        <button className="Btn-Container mb-10" onClick={handleSignIn}>
+        <button 
+          className={`Btn-Container mb-10 ${isRedirecting ? 'opacity-50 cursor-not-allowed' : ''}`} 
+          onClick={handleSignIn}
+          disabled={isRedirecting}
+        >
           <span className="text">
           {lang[langKey].signIn} {isSubmitting && <LoadingIcon content={""} />}
           </span>

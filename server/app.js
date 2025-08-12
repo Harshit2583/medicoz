@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 // Import the routes
-const razorpayRoutes = require("./razorpayRoutes");
+const stripeRoutes = require("./stripeRoutes");
 const authRoutes = require("./authRoutes");
 
 const app = express();
@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 // Use the routes
-app.use("/api/razorpay", razorpayRoutes); // Prefix for Razorpay routes
+app.use("/api/stripe", stripeRoutes); // Prefix for Stripe routes
 app.use("/api/auth", authRoutes); // Prefix for Login/Signup routes
 
 // Start server on a single port

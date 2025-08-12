@@ -27,6 +27,8 @@ notes.md
 
 # Deployment files
 vercel.json
-
 DEPLOYMENT.md
+
+# Stripe setup guide
+STRIPE_SETUP.md
 

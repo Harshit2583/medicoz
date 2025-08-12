@@ -25,8 +25,12 @@ const authSlice = createSlice({
       state.isLoggedIn = false;
       if (state.isRemember) {
         localStorage.setItem('isLoggedIn', 'false');
+        localStorage.removeItem('userData');
+        localStorage.removeItem('loginEmail');
       } else {
         sessionStorage.setItem('isLoggedIn', 'false');
+        sessionStorage.removeItem('userData');
+        sessionStorage.removeItem('loginEmail');
       }
     },
     signIn: (state) => {

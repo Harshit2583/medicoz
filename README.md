@@ -9,7 +9,7 @@ This project is a collaborative effort to build a comprehensive health platform 
 
 2. **E-Commerce for Health Monitoring Devices**:
   - Users can purchase health monitoring devices such as blood pressure monitors and glucometers.
-  - **RazorPay API** is integrated for secure and smooth transactions.
+  - **Stripe API** is integrated for secure and smooth transactions.
 
 3. **Predictive Health Insights**:
   - The platform uses predictive models to analyze health data and provide severity assessments for chronic conditions like diabetes and heart disease.
@@ -39,7 +39,7 @@ This project is a collaborative effort to build a comprehensive health platform 
 
 ### Third-party APIs:
 - **Google Places API**: Used for recommending nearby healthcare providers based on the user's condition.
-- **RazorPay API**: Used for secure transactions in the e-commerce section.
+- **Stripe API**: Used for secure transactions in the e-commerce section.
 - **EmailJs API**: Used for sending email notifications and confirmations.
 - **Bot Press**: Used for personalized health information, answer FAQs, and offer guidance on chronic condition management.
 
@@ -78,7 +78,7 @@ This project is a collaborative effort to build a comprehensive health platform 
 ## Environment Variables:
 
 Create a `.env` file in the root directory (or respective directories) to store API keys and MongoDB connection strings. Add the following keys:
-`REACT_APP_EMAIL_JS_PUBLIC_KEY`  `GOOGLE_PLACES_API_KEY`  `RAZORPAY_KEY_ID`  `RAZORPAY_KEY_SECRET`
+`REACT_APP_EMAIL_JS_PUBLIC_KEY`  `GOOGLE_PLACES_API_KEY`  `STRIPE_SECRET_KEY`  `STRIPE_PUBLISHABLE_KEY`  `REACT_APP_STRIPE_PUBLISHABLE_KEY`
 
 ## Usage
 
@@ -95,7 +95,7 @@ Create a `.env` file in the root directory (or respective directories) to store 
 
 4. **E-Commerce Section**:
   - Users can purchase health monitoring devices such as blood pressure monitors or glucometers.
-  - All transactions are securely handled using the **RazorPay API** for a smooth purchasing experience.
+  - All transactions are securely handled using the **Stripe API** for a smooth purchasing experience.
 
 5. **Chat Bot**:
   - The platform features a chat bot, built with **Botpress**, to provide users with personalized health information, answer FAQs, and offer guidance on chronic condition management.

@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { signOut } from "../Utils/authSlice";
 import { checkSignUpFormData } from "../Utils/validate";
-import { Navigate } from "react-router-dom";
 
 const useSignUp = () => {
   const email = useRef(null);
@@ -11,8 +11,10 @@ const useSignUp = () => {
   const password = useRef(null);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [submitMessage, setSubmitMessage] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isRedirecting, setIsRedirecting] = useState(false);
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -40,12 +42,29 @@ const useSignUp = () => {
       if (response.data === "exist") {
         setSubmitMessage("Email Already Exists!");
       } else if (response.data === "Sign Up Successfull") {
+        // Store user data for profile
+        const userData = {
+          email: email.current.value,
+          name: name.current.value,
+          joinDate: new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }),
+          lastVisit: "Today",
+          totalVisits: 1
+        };
+        
+        // Store in localStorage for new signups
+        localStorage.setItem('userData', JSON.stringify(userData));
+        localStorage.setItem('loginEmail', email.current.value);
+        
         setSubmitMessage(
           "Sign Up Successful. Redirecting You to Login Page..."
         );
+        
+        setIsRedirecting(true);
+        
+        // Redirect to login page after 2 seconds
         setTimeout(() => {
-          <Navigate to={"/login"}></Navigate>
-        }, 3000);
+          navigate('/login');
+        }, 2000);
       }
       setIsSubmitting(false);
     } catch (error) {
@@ -61,6 +80,7 @@ const useSignUp = () => {
     password,
     submitMessage,
     isSubmitting,
+    isRedirecting,
     handleSignIn,
   };
 };
